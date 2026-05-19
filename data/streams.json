@@ -1,1 +1,212 @@
-[]
+[
+  {
+    "channel": "disney1",
+    "source": "https://streamx550.com/global2.php?channel=disney1",
+    "stream": "https://dp744.streamingtv339.com/disney1/tracks-v1a1/mono.m3u8?token=d16582127b2326867084efd13adb7b9e3b6320dc-83-1779220034-1779219854"
+  },
+  {
+    "channel": "espn",
+    "source": "https://streamx550.com/global2.php?channel=espn",
+    "stream": "https://zb533.streamingtv339.com/espn/tracks-v1a1/mono.m3u8?token=b5fda5777f6a7609a30570dd0e093859dcb72808-81-1779220045-1779219865"
+  },
+  {
+    "channel": "foxone1",
+    "source": "https://streamx550.com/global2.php?channel=foxone1",
+    "stream": "https://pr745.streamingtv339.com/foxone1/tracks-v1a1/mono.m3u8?token=c754b5e97c6985f56a457df168e41a30562b541c-54-1779220055-1779219875"
+  },
+  {
+    "channel": "universo",
+    "source": "https://streamx550.com/global2.php?channel=universo",
+    "stream": "https://zb533.streamingtv339.com/universo/tracks-v1a1/mono.m3u8?token=78c3897faca149fb392c5242adb2860eb6482be2-2f-1779220066-1779219886"
+  },
+  {
+    "channel": "disney2",
+    "source": "https://streamx550.com/global2.php?channel=disney2",
+    "stream": "https://dp744.streamingtv339.com/disney2/tracks-v1a1/mono.m3u8?token=95f8f70fd864b9389cce27f8c2793db757faf85b-d1-1779220075-1779219895"
+  },
+  {
+    "channel": "max1",
+    "source": "https://streamx550.com/global2.php?channel=max1",
+    "stream": "https://zb533.streamingtv339.com/max1/tracks-v1a1/mono.m3u8?token=7cdab059cdb3fc43e5a38543d8b6fb3b5a4e2b53-f6-1779220084-1779219904"
+  },
+  {
+    "channel": "disney3",
+    "source": "https://streamx550.com/global2.php?channel=disney3",
+    "stream": "https://dp744.streamingtv339.com/global/disney3/index.m3u8?token=60f856decaa1da498a0f65fecd7b098f01566c24-72-1779220093-1779219913"
+  },
+  {
+    "channel": "fanatiz1",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz1",
+    "stream": "https://zb533.streamingtv339.com/fanatiz1/tracks-v1a1/mono.m3u8?token=7b131e6dd957e631553dc97b568a73b12c31e07c-e4-1779220102-1779219922"
+  },
+  {
+    "channel": "disney4",
+    "source": "https://streamx550.com/global2.php?channel=disney4",
+    "stream": "https://pr745.streamingtv339.com/global/disney4/index.m3u8?token=9c9784357130966b2c3fd7023628324873474c43-db-1779220111-1779219931"
+  },
+  {
+    "channel": "fanatiz2",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz2",
+    "stream": "https://dp744.streamingtv339.com/fanatiz2/tracks-v1a1/mono.m3u8?token=4e862363c6e6b20b7375778346874146a4b3e4fc-aa-1779220120-1779219940"
+  },
+  {
+    "channel": "espn2",
+    "source": "https://streamx550.com/global2.php?channel=espn2",
+    "stream": "https://pr745.streamingtv339.com/espn2/tracks-v1a1/mono.m3u8?token=bc530266c574263bfb95f190e19562713be2a804-f7-1779220129-1779219949"
+  },
+  {
+    "channel": "fox2ar",
+    "source": "https://streamx550.com/global2.php?channel=fox2ar",
+    "stream": "https://zb533.streamingtv339.com/fox2ar/tracks-v1a1/mono.m3u8?token=4c5f79b36fc4440c64da4ab7bc41d39744138f29-b1-1779220138-1779219958"
+  },
+  {
+    "channel": "disney5",
+    "source": "https://streamx550.com/global2.php?channel=disney5",
+    "stream": "https://pr745.streamingtv339.com/global/disney5/index.m3u8?token=fb0b62a91e56ae97f70f8dd567a63f45f2ceea61-fa-1779220147-1779219967"
+  },
+  {
+    "channel": "fanatiz3",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz3",
+    "stream": "https://zb533.streamingtv339.com/fanatiz3/tracks-v1a1/mono.m3u8?token=5f10325378acd706443724f7c3e96bb1e412d32a-99-1779220156-1779219976"
+  },
+  {
+    "channel": "espn7",
+    "source": "https://streamx550.com/global2.php?channel=espn7",
+    "stream": "https://pr745.streamingtv339.com/espn7/tracks-v1a1/mono.m3u8?token=e9c391e1d1c0bc2b5b4d24a140abe2f37d5d50d1-8e-1779220165-1779219985"
+  },
+  {
+    "channel": "espn3mx",
+    "source": "https://streamx550.com/global2.php?channel=espn3mx",
+    "stream": "https://zb533.streamingtv339.com/espn3mx/tracks-v1a1/mono.m3u8?token=0f36f4ec97ae4b2793dc7b45f5455c8f4ea6a548-fd-1779220174-1779219994"
+  },
+  {
+    "channel": "fox3ar",
+    "source": "https://streamx550.com/global2.php?channel=fox3ar",
+    "stream": "https://pr745.streamingtv339.com/fox3ar/tracks-v1a1/mono.m3u8?token=6b62edbcb3cc1e3fc5842641847930d26309f4de-23-1779220183-1779220003"
+  },
+  {
+    "channel": "disney6",
+    "source": "https://streamx550.com/global2.php?channel=disney6",
+    "stream": "https://zb533.streamingtv339.com/global/disney6/index.m3u8?token=46d10313f7695d4ae6a5fa9db567588a242bebde-b3-1779220192-1779220012"
+  },
+  {
+    "channel": "fanatiz4",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz4",
+    "stream": "https://zb533.streamingtv339.com/fanatiz4/tracks-v1a1/mono.m3u8?token=1864e5cc209624b4bea55fa09c4d8d8815543cc2-29-1779220202-1779220022"
+  },
+  {
+    "channel": "espn5",
+    "source": "https://streamx550.com/global2.php?channel=espn5",
+    "stream": "https://pr745.streamingtv339.com/espn5/tracks-v1a1/mono.m3u8?token=2d03cc6aed607d0b0c4774facc10c687b54f2b6e-01-1779220211-1779220031"
+  },
+  {
+    "channel": "fanatiz5",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz5",
+    "stream": "https://zb533.streamingtv339.com/fanatiz5/tracks-v1a1/mono.m3u8?token=411676a2f986380f8126d8a215f5bf4caeee6305-26-1779220220-1779220040"
+  },
+  {
+    "channel": "dsports",
+    "source": "https://streamx550.com/global2.php?channel=dsports",
+    "stream": "https://dp744.streamingtv339.com/dsports/tracks-v1a1/mono.m3u8?token=dba18a3b33451d8315b1a24c352719413fb7a9b4-4f-1779220229-1779220049"
+  },
+  {
+    "channel": "espn2mx",
+    "source": "https://streamx550.com/global2.php?channel=espn2mx",
+    "stream": "https://dp744.streamingtv339.com/espn2mx/tracks-v1a1/mono.m3u8?token=5f20468f8a1eb9f6576682b895fb148728fe360d-77-1779220238-1779220058"
+  },
+  {
+    "channel": "disney7",
+    "source": "https://streamx550.com/global2.php?channel=disney7",
+    "stream": "https://dp744.streamingtv339.com/global/disney7/index.m3u8?token=bdab1f094f86663fee6e0d44246ae4f10548847b-40-1779220248-1779220068"
+  },
+  {
+    "channel": "fanatiz6",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz6",
+    "stream": "https://pr745.streamingtv339.com/fanatiz6/tracks-v1a1/mono.m3u8?token=02b9027967f2c7d9611e6dc40d13bd6b414ab864-c3-1779220256-1779220076"
+  },
+  {
+    "channel": "disney8",
+    "source": "https://streamx550.com/global2.php?channel=disney8",
+    "stream": "https://pr745.streamingtv339.com/global/disney8/index.m3u8?token=dad2ddeca9780b3ab91a85a6911adf83ad18280f-3d-1779220265-1779220085"
+  },
+  {
+    "channel": "fanatiz7",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz7",
+    "stream": "https://dp744.streamingtv339.com/fanatiz7/tracks-v1a1/mono.m3u8?token=33ee57da8ea9447cf2c38f8e3d20895feff45945-b2-1779220273-1779220093"
+  },
+  {
+    "channel": "espn3",
+    "source": "https://streamx550.com/global2.php?channel=espn3",
+    "stream": "https://pr745.streamingtv339.com/espn3/tracks-v1a1/mono.m3u8?token=5b6bcf428728e06fbb042b5cab0cf7505323f613-1c-1779220283-1779220103"
+  },
+  {
+    "channel": "espnmx",
+    "source": "https://streamx550.com/global2.php?channel=espnmx",
+    "stream": "https://dp744.streamingtv339.com/espnmx/tracks-v1a1/mono.m3u8?token=0559e71bcb43614f61050a452e7cdd1777c09c5d-33-1779220292-1779220112"
+  },
+  {
+    "channel": "espndeportes",
+    "source": "https://streamx550.com/global2.php?channel=espndeportes",
+    "stream": "https://dp744.streamingtv339.com/espndeportes/tracks-v1a1/mono.m3u8?token=01cef54ca9176e1a7aad90a3c058c2add149f3fd-1b-1779220301-1779220121"
+  },
+  {
+    "channel": "disney9",
+    "source": "https://streamx550.com/global2.php?channel=disney9",
+    "stream": "https://zb533.streamingtv339.com/global/disney9/index.m3u8?token=11eea7916bf968edf79004c504e9ee60ab9b7d72-05-1779220310-1779220130"
+  },
+  {
+    "channel": "fanatiz8",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz8",
+    "stream": "https://pr745.streamingtv339.com/fanatiz8/tracks-v1a1/mono.m3u8?token=1f8b03e97998ad90c29ecabdab2a6751d79e5b08-47-1779220319-1779220139"
+  },
+  {
+    "channel": "fox1ar",
+    "source": "https://streamx550.com/global2.php?channel=fox1ar",
+    "stream": "https://dp744.streamingtv339.com/fox1ar/tracks-v1a1/mono.m3u8?token=f3501532a0078dbe86beab87df92d54020f7d876-d5-1779220328-1779220148"
+  },
+  {
+    "channel": "espn4mx",
+    "source": "https://streamx550.com/global2.php?channel=espn4mx",
+    "stream": "https://zb533.streamingtv339.com/espn4mx/tracks-v1a1/mono.m3u8?token=dd557995539b9aa4b3bb50f5960aca4720592c14-29-1779220337-1779220157"
+  },
+  {
+    "channel": "disney10",
+    "source": "https://streamx550.com/global2.php?channel=disney10",
+    "stream": "https://zb533.streamingtv339.com/global/disney10/index.m3u8?token=8a4bf070efee7e0fefe376b5b89506eb340287ef-2d-1779220346-1779220166"
+  },
+  {
+    "channel": "fanatiz9",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz9",
+    "stream": "https://zb533.streamingtv339.com/fanatiz9/tracks-v1a1/mono.m3u8?token=d62cdbf085eaf53948e215eac849dcbfa3b428a3-e9-1779220355-1779220175"
+  },
+  {
+    "channel": "foxone2",
+    "source": "https://streamx550.com/global2.php?channel=foxone2",
+    "stream": "https://dp744.streamingtv339.com/global/foxone2/index.m3u8?token=5fa89f79b6e4b5e1540e2438ac0a588b18363a27-3b-1779220364-1779220184"
+  },
+  {
+    "channel": "ivc",
+    "source": "https://streamx550.com/global2.php?channel=ivc",
+    "stream": "https://pr745.streamingtv339.com/ivc/tracks-v1a1/mono.m3u8?token=b7f39536746494a965af5c122c6d539211c65014-3b-1779220372-1779220192"
+  },
+  {
+    "channel": "disney11",
+    "source": "https://streamx550.com/global2.php?channel=disney11",
+    "stream": "https://pr745.streamingtv339.com/global/disney11/index.m3u8?token=35efe12c6d8484725dc3adc75dac4899db4fefee-9f-1779220382-1779220202"
+  },
+  {
+    "channel": "fanatiz10",
+    "source": "https://streamx550.com/global2.php?channel=fanatiz10",
+    "stream": "https://dp744.streamingtv339.com/fanatiz10/tracks-v1a1/mono.m3u8?token=52e028d073853d8e736dab209d96631f6730d6dc-30-1779220391-1779220211"
+  },
+  {
+    "channel": "disney12",
+    "source": "https://streamx550.com/global2.php?channel=disney12",
+    "stream": "https://zb533.streamingtv339.com/global/disney12/index.m3u8?token=0b4bbb5d17eba49336e28d9dd07daad10922db3c-c4-1779220400-1779220220"
+  },
+  {
+    "channel": "espn4",
+    "source": "https://streamx550.com/global2.php?channel=espn4",
+    "stream": "https://pr745.streamingtv339.com/espn4/tracks-v1a1/mono.m3u8?token=a59da5828eed896c12b5cfa213e0a3eb27e93bf9-ea-1779220409-1779220229"
+  }
+]
