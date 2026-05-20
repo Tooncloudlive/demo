@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ToonCloud Deportes</title>
-<!-- Build: {{BUILD_TIME}} | Events: {{EVENTS_COUNT}} | Logos: {{LOGOS_COUNT}} | Streams: {{STREAMS_COUNT}} -->
+<!-- Build: {{BUILD_TIME}} | Events: {{EVENTS_COUNT}} | Logos: {{LOGOS_COUNT}} -->
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <link rel="icon" type="image/png" href="https://i.imgur.com/XAHG8BW.png">
 <link rel="apple-touch-icon" href="https://i.imgur.com/XAHG8BW.png">
 <base target="_blank">
@@ -414,6 +413,260 @@ header {
   flex: 1;
   height: 0.5px;
   background: linear-gradient(90deg, var(--ios-separator) 0%, transparent 100%);
+}
+
+/* =====================================================
+   FEATURED EVENTS - Destacados Cards
+   Promotional image cards with glassmorphism overlay
+   ===================================================== */
+.featured-section {
+  margin-bottom: var(--space-5);
+}
+
+.featured-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: card-enter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 0;
+  cursor: default;
+  box-shadow: var(--liquid-shadow);
+  border: 0.5px solid var(--liquid-border);
+  /* Liquid glass base */
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.01) 40%,
+      rgba(255, 255, 255, 0.01) 60%,
+      rgba(255, 255, 255, 0.04) 100%);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+}
+
+.featured-card:nth-child(1) { animation-delay: 0s; }
+.featured-card:nth-child(2) { animation-delay: 0.08s; }
+.featured-card:nth-child(3) { animation-delay: 0.16s; }
+
+.featured-card:hover {
+  transform: translateY(-3px) scale(1.008);
+  box-shadow: var(--liquid-shadow-hover);
+  border-color: var(--ios-border-hover);
+}
+
+/* Promotional image area */
+.featured-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.featured-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-card:hover .featured-image-wrap img {
+  transform: scale(1.04);
+}
+
+/* Gradient overlay on image for readability */
+.featured-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  pointer-events: none;
+}
+
+/* Badge overlay on image (top-left) */
+.featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(10, 132, 255, 0.85), rgba(120, 60, 220, 0.85));
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(10, 132, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.featured-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Optional link overlay on entire image */
+.featured-image-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 12px;
+  text-decoration: none;
+}
+
+/* Content area below image */
+.featured-content {
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .featured-content {
+    padding: var(--space-4) var(--space-5) var(--space-3);
+  }
+}
+
+/* Title row: league + time */
+.featured-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.featured-league {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ios-text-tertiary);
+  border-radius: var(--radius-full);
+  border: 0.5px solid var(--ios-border);
+  white-space: nowrap;
+}
+
+.featured-time {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--ios-text-secondary);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Main title */
+.featured-title {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--ios-text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin: 2px 0;
+}
+
+/* Subtitle */
+.featured-subtitle {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--ios-text-secondary);
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  margin-bottom: 2px;
+}
+
+/* CTA row */
+.featured-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+  border-top: 0.5px solid var(--ios-separator);
+  margin-top: 2px;
+}
+
+.featured-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  background: linear-gradient(135deg, #0a84ff, #7c3aed);
+  color: white;
+  box-shadow: 0 2px 14px rgba(10, 132, 255, 0.3);
+}
+
+.featured-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 22px rgba(10, 132, 255, 0.45);
+}
+
+.featured-cta:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 8px rgba(10, 132, 255, 0.3);
+}
+
+.featured-cta-disabled {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: default;
+  letter-spacing: -0.01em;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ios-text-tertiary);
+  border: 0.5px solid var(--ios-border);
+}
+
+/* Live glow for featured cards with active events */
+.featured-card.featured-live {
+  border-color: rgba(48, 209, 88, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 0.5px rgba(48, 209, 88, 0.15), 0 0 20px rgba(48, 209, 88, 0.06);
+}
+
+.featured-card.featured-live:hover {
+  border-color: rgba(48, 209, 88, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(48, 209, 88, 0.2), 0 0 28px rgba(48, 209, 88, 0.08);
+}
+
+.featured-card.featured-live .featured-badge {
+  background: linear-gradient(135deg, rgba(48, 209, 88, 0.9), rgba(10, 132, 255, 0.9));
+  box-shadow: 0 2px 12px rgba(48, 209, 88, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 /* =====================================================
@@ -935,106 +1188,11 @@ header {
   position: relative;
 }
 
-#video-player {
+#iframe-player {
   width: 100%;
   height: 100%;
   border: none;
   background: #000;
-  display: block;
-}
-
-.video-loading {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  background: #000;
-  z-index: 5;
-  transition: opacity 0.3s ease;
-}
-
-.video-loading.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.video-loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top-color: var(--ios-accent);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-.video-loading-text {
-  font-size: var(--text-sm);
-  color: var(--ios-text-secondary);
-  font-weight: 500;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.video-error {
-  position: absolute;
-  inset: 0;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 6;
-  padding: 24px;
-  text-align: center;
-}
-
-.video-error.active {
-  display: flex;
-}
-
-.video-error-icon {
-  font-size: 2rem;
-  opacity: 0.4;
-}
-
-.video-error-text {
-  font-size: var(--text-sm);
-  color: var(--ios-text-secondary);
-  font-weight: 500;
-}
-
-.video-error-subtext {
-  font-size: var(--text-xs);
-  color: var(--ios-text-tertiary);
-}
-
-.btn-retry {
-  margin-top: 8px;
-  padding: 8px 18px;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  font-family: inherit;
-  background: linear-gradient(135deg, #0a84ff, #0066d4);
-  color: white;
-  border: none;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-retry:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(10, 132, 255, 0.45);
-}
-
-.btn-retry:active {
-  transform: scale(0.96);
 }
 
 /* =====================================================
@@ -1171,6 +1329,30 @@ header {
   .disclaimer .subtitle {
     font-size: 0.6875rem;
   }
+
+  /* Featured cards mobile */
+  .featured-content {
+    padding: var(--space-3) var(--space-3) var(--space-2);
+  }
+
+  .featured-title {
+    font-size: var(--text-lg);
+  }
+
+  .featured-subtitle {
+    font-size: var(--text-xs);
+  }
+
+  .featured-badge {
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    font-size: 0.55rem;
+  }
+
+  .featured-image-wrap {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1266,6 +1448,16 @@ header {
     </a>
   </div>
 
+  <!-- ===== DESTACADOS: Eventos Importados Manualmente ===== -->
+  <!-- Este bloque solo se muestra si hay eventos con imagen en importantEventsData -->
+  <div id="featured-section" class="featured-section" style="display:none;">
+    <div class="section-header">
+      <span class="section-title">Destacados</span>
+      <div class="section-line"></div>
+    </div>
+    <div id="featured-events"></div>
+  </div>
+
   <!-- Section Header -->
   <div class="section-header">
     <span class="section-title">Programacion</span>
@@ -1288,18 +1480,8 @@ header {
       <span>Cerrar</span>
     </button>
   </div>
-  <div class="player-wrapper" id="player-wrapper">
-    <div class="video-loading" id="video-loading">
-      <div class="video-loading-spinner"></div>
-      <span class="video-loading-text">Cargando stream...</span>
-    </div>
-    <div class="video-error" id="video-error">
-      <div class="video-error-icon">&#128683;</div>
-      <span class="video-error-text">No se pudo cargar el stream</span>
-      <span class="video-error-subtext">El enlace puede no estar disponible o requiere autenticacion</span>
-      <button class="btn-retry" onclick="retryStream()">Reintentar</button>
-    </div>
-    <video id="video-player" playsinline controls preload="auto"></video>
+  <div class="player-wrapper">
+    <iframe id="iframe-player" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -1321,10 +1503,35 @@ const matchesLogos = [];
 const eventsData = [];
 
 // =====================================================
-// DATOS DE STREAMS M3U8
+// DATOS DE EVENTOS DESTACADOS (MANUAL)
 // =====================================================
-// {{STREAMS_DATA}}
-const streamsData = [];
+// Agrega aqui los eventos destacados que quieras mostrar.
+// Cada evento DEBE tener una imagen (image) para ser visible.
+// Si image esta vacio, nulo o no existe, el evento se ignora.
+// Si no hay eventos validos, el bloque completo no se muestra.
+//
+// Estructura:
+// {
+//   title:      "Titulo del evento",
+//   subtitle:   "Descripcion breve opcional",
+//   league:     "Nombre de la liga o competencia",
+//   time:       "HH:MM (hora del evento)",
+//   image:      "URL_DE_LA_IMAGEN_PROMOCIONAL",
+//   link:       "URL_OPCIONAL_PARA_ENLACE",
+//   badge:      "Texto del badge (default: DESTACADO)"
+// }
+
+const importantEventsData = [
+  // {
+  //   title: "Superclasico",
+  //   subtitle: "El partido mas esperado de la temporada",
+  //   league: "Liga Profesional",
+  //   time: "21:30",
+  //   image: "https://ejemplo.com/imagen-promo.jpg",
+  //   link: "https://ejemplo.com/mas-info",
+  //   badge: "EVENTO ESPECIAL"
+  // }
+];
 
 // =====================================================
 // DICCIONARIO DE MAPEO DE LIGAS
@@ -1843,216 +2050,108 @@ function renderEvents(list = eventsData) {
 }
 
 // =====================================================
-// HLS.JS INTEGRACION - CON LIMPIEZA DE URL Y RETRY
+// RENDERIZADO DE EVENTOS DESTACADOS (MANUAL)
 // =====================================================
+// Funcion independiente para renderizar eventos destacados.
+// - Solo muestra eventos que tengan una imagen valida (image no vacio).
+// - Si no hay eventos validos, oculta el bloque completo.
+// - No afecta live-count, upcoming-count, ni filterEvents().
+// - Se llama una sola vez al inicio; no se actualiza por intervalo.
 
-let hlsInstance = null;
-let currentStreamUrl = null;
-let currentMatchTitle = '';
-let _triedCleanUrl = false; // evita loop infinito de retry
+function renderImportantEvents() {
+  const sectionEl = document.getElementById('featured-section');
+  const containerEl = document.getElementById('featured-events');
 
-/**
- * Limpia parametros problematicos de una URL de stream.
- * Elimina ip= hardcodeado (del runner de GitHub Actions).
- * Mantiene token y otros parametros funcionales.
- * Se usa tanto en el extractor como respaldo en el frontend.
- */
-function cleanStreamUrl(url) {
-  if (!url || typeof url !== 'string') return url;
-  try {
-    const urlObj = new URL(url);
-    const paramsToRemove = ['ip'];
-    for (const p of paramsToRemove) {
-      urlObj.searchParams.delete(p);
-    }
-    return urlObj.toString();
-  } catch {
-    return url.replace(/[?&]ip=[^&]+/g, '').replace(/\?$/, '').replace(/&&+/g, '&').replace(/\?&/, '?');
-  }
-}
+  // Filtrar solo eventos con imagen valida
+  const validEvents = importantEventsData.filter(ev => {
+    return ev && ev.image && typeof ev.image === 'string' && ev.image.trim().length > 0;
+  });
 
-function getChannelFromLink(link) {
-  const match = link.match(/channel=([a-zA-Z0-9]+)/);
-  return match ? match[1] : null;
-}
-
-function resolveStreamUrl(link) {
-  const channel = getChannelFromLink(link);
-  if (!channel || !streamsData || !streamsData.length) return cleanStreamUrl(link);
-
-  // Buscar en streamsData el m3u8 para este canal
-  const found = streamsData.find(s => s.channel === channel);
-  if (found && found.stream) {
-    // Siempre limpiar ip= como doble proteccion
-    return cleanStreamUrl(found.stream);
-  }
-
-  // Fallback: limpiar el link original
-  return cleanStreamUrl(link);
-}
-
-function isM3U8(url) {
-  if (!url) return false;
-  const u = url.toLowerCase();
-  return u.includes('.m3u8') || u.includes('application/x-mpegurl');
-}
-
-function destroyHLS() {
-  if (hlsInstance) {
-    try {
-      hlsInstance.destroy();
-    } catch (_) {}
-    hlsInstance = null;
-  }
-  const video = document.getElementById('video-player');
-  if (video) {
-    video.pause();
-    video.removeAttribute('src');
-    video.load();
-  }
-}
-
-function showVideoLoading(show) {
-  const el = document.getElementById('video-loading');
-  if (!el) return;
-  if (show) el.classList.remove('hidden');
-  else el.classList.add('hidden');
-}
-
-function showVideoError(show) {
-  const el = document.getElementById('video-error');
-  if (!el) return;
-  if (show) el.classList.add('active');
-  else el.classList.remove('active');
-}
-
-function initHLS(streamUrl, matchTitle) {
-  currentStreamUrl = streamUrl;
-  currentMatchTitle = matchTitle;
-  _triedCleanUrl = false;
-  const video = document.getElementById('video-player');
-
-  showVideoLoading(true);
-  showVideoError(false);
-
-  // Si no es m3u8, fallback a iframe (abrir en nueva pestana)
-  if (!isM3U8(streamUrl)) {
-    showVideoLoading(false);
-    closePlayer();
-    window.open(streamUrl, '_blank');
+  // Si no hay eventos validos, ocultar la seccion completa y salir
+  if (validEvents.length === 0) {
+    sectionEl.style.display = 'none';
+    containerEl.innerHTML = '';
     return;
   }
 
-  destroyHLS();
+  // Mostrar la seccion y renderizar
+  sectionEl.style.display = '';
+  containerEl.innerHTML = '';
 
-  if (Hls.isSupported()) {
-    hlsInstance = new Hls({
-      enableWorker: true,
-      lowLatencyMode: true,
-      backBufferLength: 90,
-      maxBufferLength: 30,
-      maxMaxBufferLength: 60,
-      liveSyncDurationCount: 3,
-      liveMaxLatencyDurationCount: 5,
-      manifestLoadingTimeOut: 10000,
-      manifestLoadingMaxRetry: 2,
-      levelLoadingTimeOut: 10000,
-      levelLoadingMaxRetry: 2,
-      fragLoadingTimeOut: 10000,
-      fragLoadingMaxRetry: 3,
-    });
+  validEvents.forEach((ev, index) => {
+    const card = document.createElement('div');
+    card.className = 'featured-card';
+    card.style.animationDelay = `${index * 0.08}s`;
 
-    hlsInstance.on(Hls.Events.MEDIA_ATTACHED, function () {
-      hlsInstance.loadSource(streamUrl);
-    });
+    // Determinar si el evento esta en vivo (opcional visual)
+    const eventStatus = ev.time ? getStatus(ev.time) : 'PROXIMO';
+    if (eventStatus === 'EN VIVO') {
+      card.classList.add('featured-live');
+    }
 
-    hlsInstance.on(Hls.Events.MANIFEST_PARSED, function () {
-      showVideoLoading(false);
-      showVideoError(false);
-      video.play().catch(() => {
-        // Autoplay bloqueado, el usuario debe dar play manual
-      });
-    });
+    const badgeText = ev.badge || 'DESTACADO';
+    const hasLink = ev.link && typeof ev.link === 'string' && ev.link.trim().length > 0;
 
-    hlsInstance.on(Hls.Events.ERROR, function (event, data) {
-      console.warn('[HLS] Error:', data.type, data.details);
+    // Construir HTML de la imagen (con link opcional envolviendo)
+    const imageHTML = `
+      <div class="featured-image-wrap">
+        <img src="${ev.image}" alt="${ev.title || ''}" loading="lazy"
+             onerror="this.closest('.featured-card').style.display='none';">
+        <span class="featured-badge">${escapeHtml(badgeText)}</span>
+        ${hasLink ? `<a href="${ev.link}" target="_blank" rel="noopener noreferrer" class="featured-image-link" aria-label="Ver detalle de ${escapeHtml(ev.title || '')}"></a>` : ''}
+      </div>
+    `;
 
-      if (data.fatal) {
-        showVideoLoading(false);
+    // Construir HTML del contenido
+    const titleHTML = ev.title
+      ? `<h3 class="featured-title">${escapeHtml(ev.title)}</h3>`
+      : '';
+    const subtitleHTML = ev.subtitle
+      ? `<p class="featured-subtitle">${escapeHtml(ev.subtitle)}</p>`
+      : '';
+    const leagueHTML = ev.league
+      ? `<span class="featured-league">${escapeHtml(ev.league)}</span>`
+      : '<span class="featured-league">Evento</span>';
+    const timeHTML = ev.time
+      ? `<span class="featured-time">${escapeHtml(ev.time)}</span>`
+      : '';
 
-        switch (data.type) {
-          case Hls.ErrorTypes.NETWORK_ERROR:
-            console.log('[HLS] Error de red, intentando recuperar...');
+    // CTA: si tiene link, mostrar boton activo; si no, mostrar estado
+    let ctaHTML = '';
+    if (hasLink) {
+      ctaHTML = `<a href="${ev.link}" target="_blank" rel="noopener noreferrer" class="featured-cta">
+        <span>&#9654;</span>
+        <span>Ver detalle</span>
+      </a>`;
+    } else {
+      ctaHTML = `<span class="featured-cta-disabled">Proximamente</span>`;
+    }
 
-            // Si la URL tiene ip= hardcodeado, intentar con URL limpia automaticamente
-            if (!_triedCleanUrl && currentStreamUrl && currentStreamUrl.includes('ip=')) {
-              const cleanUrl = cleanStreamUrl(currentStreamUrl);
-              if (cleanUrl !== currentStreamUrl) {
-                console.log('[HLS] Reintentando con URL limpia (sin ip hardcodeado):', cleanUrl);
-                _triedCleanUrl = true;
-                currentStreamUrl = cleanUrl;
-                destroyHLS();
-                showVideoLoading(true);
-                showVideoError(false);
-                // Reintentar con URL limpia
-                setTimeout(() => initHLS(cleanUrl, currentMatchTitle), 500);
-                return;
-              }
-            }
+    card.innerHTML = `
+      ${imageHTML}
+      <div class="featured-content">
+        <div class="featured-meta-row">
+          ${leagueHTML}
+          ${timeHTML}
+        </div>
+        ${titleHTML}
+        ${subtitleHTML}
+        <div class="featured-cta-row">
+          ${ctaHTML}
+        </div>
+      </div>
+    `;
 
-            showVideoError(true);
-            break;
-          case Hls.ErrorTypes.MEDIA_ERROR:
-            console.log('[HLS] Error de media, intentando recuperar...');
-            hlsInstance.recoverMediaError();
-            break;
-          default:
-            console.log('[HLS] Error fatal, no se puede recuperar');
-            showVideoError(true);
-            destroyHLS();
-            break;
-        }
-      }
-    });
-
-    hlsInstance.attachMedia(video);
-  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    // Safari native HLS
-    video.src = streamUrl;
-    video.addEventListener('loadedmetadata', function () {
-      showVideoLoading(false);
-      showVideoError(false);
-      video.play().catch(() => {});
-    });
-    video.addEventListener('error', function () {
-      // Si falla en Safari y la URL tiene ip=, intentar con limpia
-      if (!_triedCleanUrl && streamUrl.includes('ip=')) {
-        const cleanUrl = cleanStreamUrl(streamUrl);
-        if (cleanUrl !== streamUrl) {
-          _triedCleanUrl = true;
-          currentStreamUrl = cleanUrl;
-          video.src = cleanUrl;
-          return;
-        }
-      }
-      showVideoLoading(false);
-      showVideoError(true);
-    });
-  } else {
-    showVideoLoading(false);
-    showVideoError(true);
-  }
+    containerEl.appendChild(card);
+  });
 }
 
-function retryStream() {
-  _triedCleanUrl = false;
-  if (currentStreamUrl) {
-    showVideoError(false);
-    // Al reintentar manualmente, siempre limpiar primero
-    const cleanUrl = cleanStreamUrl(currentStreamUrl);
-    currentStreamUrl = cleanUrl;
-    initHLS(cleanUrl, currentMatchTitle);
-  }
+// Helper minimo para escapar HTML y prevenir XSS en destacados
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 
 // =====================================================
@@ -2069,19 +2168,14 @@ function watchMatch(matchId) {
 
 function openPlayer(link, matchTitle) {
   document.getElementById("player").classList.add("active");
+  document.getElementById("iframe-player").src = link;
   document.getElementById("player-title-text").textContent = matchTitle;
   document.body.style.overflow = "hidden";
-
-  // Resolver el stream m3u8 real (ya limpia ip=)
-  const streamUrl = resolveStreamUrl(link);
-  initHLS(streamUrl, matchTitle);
 }
 
 function closePlayer() {
   document.getElementById("player").classList.remove("active");
-  destroyHLS();
-  showVideoLoading(false);
-  showVideoError(false);
+  document.getElementById("iframe-player").src = "";
   document.body.style.overflow = "";
 }
 
@@ -2162,8 +2256,11 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closePlayer();
 });
 
-// Inicializar
-renderEvents();
+// =====================================================
+// INICIALIZACION
+// =====================================================
+renderImportantEvents();  // Renderizar destacados (manual, independiente)
+renderEvents();           // Renderizar programacion (existante)
 setInterval(updateStatuses, 1000);
 </script>
 
