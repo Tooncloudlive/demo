@@ -1,28 +1,8 @@
 [
   {
-    "match": "Freiburg vs Sporting Braga - Final",
-    "homeLogo": "",
-    "awayLogo": "https://static.flashscore.com/res/image/data/j3CGCQTH-6JDIcK05.png"
-  },
-  {
-    "match": "Talleres Córdoba vs Atlético Tucumán",
-    "homeLogo": "https://static.flashscore.com/res/image/data/p45YOHAr-hUOWZpWa.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/0hFCl2f5-QitRwNMT.png"
-  },
-  {
-    "match": "Fortaleza CEIF vs Orsomarso",
-    "homeLogo": "https://static.flashscore.com/res/image/data/08K355yB-lrqyzouB.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/KEu2pFDa-OQvTHdKn.png"
-  },
-  {
-    "match": "Boston River vs O'Higgins",
-    "homeLogo": "https://static.flashscore.com/res/image/data/lvnKywHG-pOoSyvxr.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/f1MK7GzS-zPh2QHcM.png"
-  },
-  {
     "match": "Olimpia vs Vasco da Gama",
     "homeLogo": "https://static.flashscore.com/res/image/data/fFjeTTwS-UPd1WAes.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/d2irXNjl-bam8o1Nj.png"
+    "awayLogo": ""
   },
   {
     "match": "Santos vs San Lorenzo",
