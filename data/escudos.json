@@ -1,112 +1,22 @@
 [
   {
-    "match": "Wanderers vs Deportivo Maldonado",
-    "homeLogo": "https://static.flashscore.com/res/image/data/WCc1ByCa-zFwegNb8.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/KULuUkCr-xvp8ggnJ.png"
+    "match": "Paderborn vs Wolfsburg - Relegation Playoff (2/2)",
+    "homeLogo": "https://static.flashscore.com/res/image/data/Yu5IOeyB-Qmnf8wEL.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/Uyo9vAxS-SSSLeFGl.png"
   },
   {
-    "match": "Sport Huancayo vs Cienciano",
-    "homeLogo": "https://static.flashscore.com/res/image/data/hnIOJwGG-6ayjGGhJ.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/dI31wDil-Mu345fFj.png"
+    "match": "Comerciantes Unidos vs Deportivo Garcilaso",
+    "homeLogo": "https://static.flashscore.com/res/image/data/lOuqQhhl-8dieWfgh.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/hQp9ywwS-rV5EZZh1.png"
   },
   {
-    "match": "River Plate vs Belgrano - Final",
-    "homeLogo": "https://static.flashscore.com/res/image/data/Ic4xH0Yg-nqhLBCKD.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/fVzQ4lxS-jXvNrLYt.png"
+    "match": "Coritiba vs Bahia",
+    "homeLogo": "https://static.flashscore.com/res/image/data/xKm8lie5-bwYqIWsq.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/f5V5z1Cr-dKUmd286.png"
   },
   {
-    "match": "Torino vs Juventus",
-    "homeLogo": "https://static.flashscore.com/res/image/data/OQWGjGcM-0lwy4Ij1.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/GKF3dlf5-0nz5yHcE.png"
-  },
-  {
-    "match": "Milan vs Cagliari",
-    "homeLogo": "https://static.flashscore.com/res/image/data/htYjIjFa-KtCfnbWp.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/IBlLf9f5-McvX4bye.png"
-  },
-  {
-    "match": "Cremonese vs Como",
-    "homeLogo": "https://static.flashscore.com/res/image/data/EDUhUrDr-8b0QRXR3.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/Cf5pQNyS-hpmw8K1h.png"
-  },
-  {
-    "match": "Lecce vs Genoa",
-    "homeLogo": "https://static.flashscore.com/res/image/data/AaI0V5Fa-McvX4bye.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/WznpqVfM-hCD6m1R3.png"
-  },
-  {
-    "match": "Verona vs Roma",
-    "homeLogo": "https://static.flashscore.com/res/image/data/vgsKSajl-Kxh373f3.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/QPgsexZA-GtNb9h2q.png"
-  },
-  {
-    "match": "Villarreal vs Atlético Madrid",
-    "homeLogo": "https://static.flashscore.com/res/image/data/65Z85Uh5-GSuwY3p9.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/CjfjIsYg-GhHiNvXF.png"
-  },
-  {
-    "match": "La Serena vs Deportes Limache",
-    "homeLogo": "https://static.flashscore.com/res/image/data/YDcd9wDa-Mkzo6oBm.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/MZL6fsDr-EawjMZXB.png"
-  },
-  {
-    "match": "Cruzeiro vs Chapecoense",
-    "homeLogo": "https://static.flashscore.com/res/image/data/lCWrxmg5-SjJmyx86.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/v9EKoUeM-CYex0lQl.png"
-  },
-  {
-    "match": "Remo vs Athletico-PR",
-    "homeLogo": "https://static.flashscore.com/res/image/data/dWTc9iBr-vsDPUWUH.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/SdnmINcM-QaMaOfUh.png"
-  },
-  {
-    "match": "Sportivo Ameliano vs Sportivo Trinidense",
-    "homeLogo": "https://static.flashscore.com/res/image/data/h0WsLVGG-hpyVjm6H.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/ruDjw6fM-zLKsTEF7.png"
-  },
-  {
-    "match": "Cerro Porteño vs Rubio Ñú",
-    "homeLogo": "https://static.flashscore.com/res/image/data/Ovlb3hBr-0fSZKKz2.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/SYOSI3Ea-naCm8i0g.png"
-  },
-  {
-    "match": "Nacional Asunción vs Libertad",
-    "homeLogo": "https://static.flashscore.com/res/image/data/WIKARXhl-6PG8meHs.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/ln1XQ9Ar-UwvYANk9.png"
-  },
-  {
-    "match": "Alianza Atlético vs FC Cajamarca",
-    "homeLogo": "https://static.flashscore.com/res/image/data/Miy4LAeM-z942qmGf.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/txvKJLh5-vJhlopip.png"
-  },
-  {
-    "match": "Columbus Crew vs Atlanta United",
-    "homeLogo": "https://static.flashscore.com/res/image/data/bB12gedM-EgOLyoyn.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/WpdfffCa-MeFN3n19.png"
-  },
-  {
-    "match": "Defensor Sporting vs Peñarol",
-    "homeLogo": "https://static.flashscore.com/res/image/data/UgKB6TzS-vZdejfYC.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/8rkcbrGG-nqhLBCKD.png"
-  },
-  {
-    "match": "Corinthians vs Atlético Mineiro",
-    "homeLogo": "https://static.flashscore.com/res/image/data/lY91WW9r-6cpWH3kh.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/WbSJHDh5-UHhQ6Y1N.png"
-  },
-  {
-    "match": "Universidad Católica vs Colo-Colo",
-    "homeLogo": "https://static.flashscore.com/res/image/data/OvyAhfyB-nRWWeW7h.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/CMCTeMxS-tnwDCzLD.png"
-  },
-  {
-    "match": "Thunder vs Spurs",
-    "homeLogo": "https://static.flashscore.com/res/image/data/bFgddNh5-4zc22IQb.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/8f2WVCFG-SrHHDGUm.png"
-  },
-  {
-    "match": "Pumas UNAM vs Cruz Azul - Final (2/2)",
-    "homeLogo": "https://static.flashscore.com/res/image/data/2mlyLKEG-pEQGCKC1.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/juUdUvvS-4UD5BJKp.png"
+    "match": "Knicks vs Cavaliers",
+    "homeLogo": "https://static.flashscore.com/res/image/data/UBTxFpcM-I30Q0K9l.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/AqYiLvHG-6ZJgih6O.png"
   }
 ]
