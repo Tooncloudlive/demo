@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ToonCloud Deportes</title>
-<!-- Build: 2026-05-26 09:33 | Events: 0 | Logos: 0 -->
+<!-- Build: 2026-05-26 20:01 | Events: 45 | Logos: 15 -->
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1493,12 +1493,74 @@ header {
 // El formato es: { match: "Equipo Local vs Equipo Visitante", homeLogo: "URL_ESCUDO_LOCAL", awayLogo: "URL_ESCUDO_VISITANTE" }
 // Si no quieres escudo para un equipo, deja el campo vacio: ""
 
-const matchesLogos = [];
+const matchesLogos = [
+  { match: "Saint-Étienne vs Nice - Relegation Playoff (1/2)", homeLogo: "https://static.flashscore.com/res/image/data/b7wgpIDa-8Ca53MKO.png", awayLogo: "https://static.flashscore.com/res/image/data/boyRUvyB-00sqJmg8.png" },
+  { match: "Real Cundinamarca vs Rionegro Águilas", homeLogo: "https://static.flashscore.com/res/image/data/C0A5xQil-bqFiSdJl.png", awayLogo: "https://static.flashscore.com/res/image/data/rTt0P7Da-2eGA9cib.png" },
+  { match: "LDU Quito vs Always Ready", homeLogo: "https://static.flashscore.com/res/image/data/QynioKCa-dldy8uVh.png", awayLogo: "https://static.flashscore.com/res/image/data/h2zsNpg5-Ycu4vmIa.png" },
+  { match: "Lanús vs Mirassol", homeLogo: "https://static.flashscore.com/res/image/data/h4Xuyuf5-xQnxBzcF.png", awayLogo: "https://static.flashscore.com/res/image/data/SUmYTyAr-fVnYQB8j.png" },
+  { match: "Millonarios vs O'Higgins", homeLogo: "https://static.flashscore.com/res/image/data/COAjhCg5-6kduDy6P.png", awayLogo: "https://static.flashscore.com/res/image/data/f1MK7GzS-zPh2QHcM.png" },
+  { match: "São Paulo vs Boston River", homeLogo: "https://static.flashscore.com/res/image/data/YgK3qNCa-AkTesf41.png", awayLogo: "https://static.flashscore.com/res/image/data/lvnKywHG-pOoSyvxr.png" },
+  { match: "Palestino vs Deportivo Riestra", homeLogo: "https://static.flashscore.com/res/image/data/GxmUk4dM-Mofbp184.png", awayLogo: "https://static.flashscore.com/res/image/data/Wr1x3UWg-rRNfwvij.png" },
+  { match: "Grêmio vs Torque", homeLogo: "https://static.flashscore.com/res/image/data/QPdJscAr-tQsU6dGl.png", awayLogo: "https://cdn.cookielaw.org/logos/static/ot_company_logo.png" },
+  { match: "Estudiantes LP vs Medellín", homeLogo: "https://static.flashscore.com/res/image/data/fka7Uhe5-2aA5n1nK.png", awayLogo: "https://static.flashscore.com/res/image/data/lMyrsdhl-plopiAtN.png" },
+  { match: "Universitario vs Deportes Tolima", homeLogo: "https://cdn.cookielaw.org/logos/static/ot_company_logo.png", awayLogo: "https://static.flashscore.com/res/image/data/ngiuiwYg-bXlV9lJE.png" },
+  { match: "Nacional vs Coquimbo Unido", homeLogo: "https://static.flashscore.com/res/image/data/WUIDNjFa-xErFNzEn.png", awayLogo: "https://static.flashscore.com/res/image/data/O40oH8h5-hMng3olL.png" },
+  { match: "Flamengo vs Cusco", homeLogo: "https://static.flashscore.com/res/image/data/ADvIaiZA-2R2JjDQC.png", awayLogo: "https://static.flashscore.com/res/image/data/OjnbBwXg-06OeOzI0.png" },
+  { match: "San Lorenzo vs Deportivo Recoleta", homeLogo: "https://static.flashscore.com/res/image/data/OEgPhXYA-jwW2wgsf.png", awayLogo: "https://static.flashscore.com/res/image/data/fLgiVph5-WpTP4Ior.png" },
+  { match: "Santos vs Deportivo Cuenca", homeLogo: "https://static.flashscore.com/res/image/data/rJGaKUhl-hv442jSk.png", awayLogo: "https://static.flashscore.com/res/image/data/tfVpg5YA-UcMAfaUd.png" },
+  { match: "Spurs vs Thunder", homeLogo: "https://static.flashscore.com/res/image/data/8f2WVCFG-SrHHDGUm.png", awayLogo: "https://static.flashscore.com/res/image/data/bFgddNh5-4zc22IQb.png" }
+];
 
 // =====================================================
 // DATOS DE EVENTOS
 // =====================================================
-const eventsData = [];
+const eventsData = [
+  { time: "15:45", match: "Ligue 1: Saint-Étienne vs Nice - Relegation Playoff (1/2)", link: "https://streamx741.com/global2.php?channel=espn5" },
+  { time: "17:30", match: "Copa Colombia: Real Cundinamarca vs Rionegro Águilas", link: "https://streamx741.com/global2.php?channel=winplus" },
+  { time: "17:30", match: "Copa Colombia: Real Cundinamarca vs Rionegro Águilas", link: "https://streamx741.com/global2.php?channel=winplus2" },
+  { time: "19:00", match: "Copa Libertadores: LDU Quito vs Always Ready", link: "https://streamx741.com/global2.php?channel=disney1" },
+  { time: "19:00", match: "Copa Libertadores: LDU Quito vs Always Ready", link: "https://streamx741.com/global2.php?channel=fanatiz1" },
+  { time: "19:00", match: "Copa Libertadores: LDU Quito vs Always Ready", link: "https://streamx741.com/global2.php?channel=espn" },
+  { time: "19:00", match: "Copa Libertadores: LDU Quito vs Always Ready", link: "https://streamx741.com/global2.php?channel=fox2ar" },
+  { time: "19:00", match: "Copa Libertadores: Lanús vs Mirassol", link: "https://streamx741.com/global2.php?channel=disney2" },
+  { time: "19:00", match: "Copa Libertadores: Lanús vs Mirassol", link: "https://streamx741.com/global2.php?channel=fanatiz2" },
+  { time: "19:00", match: "Copa Libertadores: Lanús vs Mirassol", link: "https://streamx741.com/global2.php?channel=fox1ar" },
+  { time: "19:00", match: "Copa Libertadores: Lanús vs Mirassol", link: "https://streamx741.com/global2.php?channel=espn2" },
+  { time: "19:00", match: "Copa Libertadores: Lanús vs Mirassol", link: "https://streamx741.com/global2.php?channel=espn2mx" },
+  { time: "19:00", match: "Copa Sudamericana: Millonarios vs O'Higgins", link: "https://streamx741.com/global2.php?channel=dsports" },
+  { time: "19:00", match: "Copa Sudamericana: Millonarios vs O'Higgins", link: "https://streamx741.com/global2.php?channel=fanatiz3" },
+  { time: "19:00", match: "Copa Sudamericana: São Paulo vs Boston River", link: "https://streamx741.com/global2.php?channel=dsports2" },
+  { time: "19:00", match: "Copa Sudamericana: São Paulo vs Boston River", link: "https://streamx741.com/global2.php?channel=fanatiz4" },
+  { time: "19:00", match: "Copa Sudamericana: São Paulo vs Boston River", link: "https://streamx741.com/global2.php?channel=disney1br" },
+  { time: "19:00", match: "Copa Sudamericana: Palestino vs Deportivo Riestra", link: "https://streamx741.com/global2.php?channel=disney3" },
+  { time: "19:00", match: "Copa Sudamericana: Palestino vs Deportivo Riestra", link: "https://streamx741.com/global2.php?channel=fanatiz5" },
+  { time: "19:00", match: "Copa Sudamericana: Palestino vs Deportivo Riestra", link: "https://streamx741.com/global2.php?channel=espn5" },
+  { time: "19:00", match: "Copa Sudamericana: Grêmio vs Torque", link: "https://streamx741.com/global2.php?channel=fanatiz6" },
+  { time: "19:00", match: "Copa Sudamericana: Grêmio vs Torque", link: "https://streamx741.com/global2.php?channel=dsportsplus" },
+  { time: "19:00", match: "Copa Sudamericana: Grêmio vs Torque", link: "https://streamx741.com/global2.php?channel=disney2br" },
+  { time: "21:30", match: "Copa Libertadores: Estudiantes LP vs Medellín", link: "https://streamx741.com/global2.php?channel=disney4" },
+  { time: "21:30", match: "Copa Libertadores: Estudiantes LP vs Medellín", link: "https://streamx741.com/global2.php?channel=fanatiz7" },
+  { time: "21:30", match: "Copa Libertadores: Estudiantes LP vs Medellín", link: "https://streamx741.com/global2.php?channel=fox1ar" },
+  { time: "21:30", match: "Copa Libertadores: Estudiantes LP vs Medellín", link: "https://streamx741.com/global2.php?channel=espn" },
+  { time: "21:30", match: "Copa Libertadores: Universitario vs Deportes Tolima", link: "https://streamx741.com/global2.php?channel=disney5" },
+  { time: "21:30", match: "Copa Libertadores: Universitario vs Deportes Tolima", link: "https://streamx741.com/global2.php?channel=fanatiz8" },
+  { time: "21:30", match: "Copa Libertadores: Universitario vs Deportes Tolima", link: "https://streamx741.com/global2.php?channel=espn2" },
+  { time: "21:30", match: "Copa Libertadores: Nacional vs Coquimbo Unido", link: "https://streamx741.com/global2.php?channel=disney6" },
+  { time: "21:30", match: "Copa Libertadores: Nacional vs Coquimbo Unido", link: "https://streamx741.com/global2.php?channel=fanatiz9" },
+  { time: "21:30", match: "Copa Libertadores: Nacional vs Coquimbo Unido", link: "https://streamx741.com/global2.php?channel=espn5" },
+  { time: "21:30", match: "Copa Libertadores: Flamengo vs Cusco", link: "https://streamx741.com/global2.php?channel=disney7" },
+  { time: "21:30", match: "Copa Libertadores: Flamengo vs Cusco", link: "https://streamx741.com/global2.php?channel=fanatiz10" },
+  { time: "21:30", match: "Copa Libertadores: Flamengo vs Cusco", link: "https://streamx741.com/global2.php?channel=espn7" },
+  { time: "21:30", match: "Copa Libertadores: Flamengo vs Cusco", link: "https://streamx741.com/global2.php?channel=espn2mx" },
+  { time: "21:30", match: "Copa Libertadores: Flamengo vs Cusco", link: "https://streamx741.com/global2.php?channel=fox2ar" },
+  { time: "21:30", match: "Copa Sudamericana: San Lorenzo vs Deportivo Recoleta", link: "https://streamx741.com/global2.php?channel=disney8" },
+  { time: "21:30", match: "Copa Sudamericana: San Lorenzo vs Deportivo Recoleta", link: "https://streamx741.com/global2.php?channel=fanatiz1" },
+  { time: "21:30", match: "Copa Sudamericana: San Lorenzo vs Deportivo Recoleta", link: "https://streamx741.com/global2.php?channel=espn3" },
+  { time: "21:30", match: "Copa Sudamericana: Santos vs Deportivo Cuenca", link: "https://streamx741.com/global2.php?channel=dsports" },
+  { time: "21:30", match: "Copa Sudamericana: Santos vs Deportivo Cuenca", link: "https://streamx741.com/global2.php?channel=fanatiz2" },
+  { time: "21:30", match: "NBA: Spurs vs Thunder", link: "https://streamx741.com/global2.php?channel=amazon1" },
+  { time: "21:30", match: "NBA: Spurs vs Thunder", link: "https://streamx741.com/global2.php?channel=tntar" }
+];
 
 // =====================================================
 // DATOS DE EVENTOS DESTACADOS (MANUAL)
