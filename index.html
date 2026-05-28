@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ToonCloud Deportes</title>
-<!-- Build: 2026-05-28 09:42 | Events: 0 | Logos: 0 -->
+<!-- Build: 2026-05-28 20:08 | Events: 30 | Logos: 8 -->
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1493,12 +1493,52 @@ header {
 // El formato es: { match: "Equipo Local vs Equipo Visitante", homeLogo: "URL_ESCUDO_LOCAL", awayLogo: "URL_ESCUDO_VISITANTE" }
 // Si no quieres escudo para un equipo, deja el campo vacio: ""
 
-const matchesLogos = [];
+const matchesLogos = [
+  { match: "República de Irlanda vs Qatar", homeLogo: "https://cdn.cookielaw.org/logos/static/ot_company_logo.png", awayLogo: "https://static.flashscore.com/res/image/data/QXUbAsYg-xdsSUnwr.png" },
+  { match: "Palmeiras vs Junior", homeLogo: "https://static.flashscore.com/res/image/data/xCtpyPHG-ALgHCh57.png", awayLogo: "https://static.flashscore.com/res/image/data/Kz2UFMh5-G2820wU0.png" },
+  { match: "Cerro Porteño vs Sporting Cristal", homeLogo: "https://static.flashscore.com/res/image/data/Ovlb3hBr-0fSZKKz2.png", awayLogo: "https://static.flashscore.com/res/image/data/bT8P90Ar-Em9Gxj8O.png" },
+  { match: "Boca Juniors vs Universidad Católica", homeLogo: "https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/50e7da04-6112-4255-b12f-56733e38ba02.avif", awayLogo: "https://cdn.cookielaw.org/logos/static/ot_company_logo.png" },
+  { match: "Cruzeiro vs Barcelona SC", homeLogo: "https://static.flashscore.com/res/image/data/lCWrxmg5-SjJmyx86.png", awayLogo: "https://static.flashscore.com/res/image/data/nit9vJwS-WErjuywa.png" },
+  { match: "América de Cali vs Macará", homeLogo: "https://static.flashscore.com/res/image/data/fySikCAr-hSZHTo4B.png", awayLogo: "https://static.flashscore.com/res/image/data/4tKF7Wh5-0C12xtlP.png" },
+  { match: "Tigre vs Alianza Atlético", homeLogo: "https://static.flashscore.com/res/image/data/dG6N1MfM-ENHpchZ2.png", awayLogo: "https://static.flashscore.com/res/image/data/Miy4LAeM-z942qmGf.png" },
+  { match: "Thunder vs Spurs", homeLogo: "https://static.flashscore.com/res/image/data/bFgddNh5-4zc22IQb.png", awayLogo: "https://static.flashscore.com/res/image/data/8f2WVCFG-SrHHDGUm.png" }
+];
 
 // =====================================================
 // DATOS DE EVENTOS
 // =====================================================
-const eventsData = [];
+const eventsData = [
+  { time: "15:45", match: "Amistoso Internacional: República de Irlanda vs Qatar", link: "https://streamx741.com/global2.php?channel=disney1" },
+  { time: "15:45", match: "Amistoso Internacional: República de Irlanda vs Qatar", link: "https://streamx741.com/global2.php?channel=skyeventos1" },
+  { time: "15:45", match: "Amistoso Internacional: República de Irlanda vs Qatar", link: "https://streamx741.com/global2.php?channel=fox2usa" },
+  { time: "15:45", match: "Amistoso Internacional: República de Irlanda vs Qatar", link: "https://streamx741.com/global2.php?channel=sportv1" },
+  { time: "19:00", match: "Copa Libertadores: Palmeiras vs Junior", link: "https://streamx741.com/global2.php?channel=disney1" },
+  { time: "19:00", match: "Copa Libertadores: Palmeiras vs Junior", link: "https://streamx741.com/global2.php?channel=fanatiz1" },
+  { time: "19:00", match: "Copa Libertadores: Palmeiras vs Junior", link: "https://streamx741.com/global2.php?channel=espn" },
+  { time: "19:00", match: "Copa Libertadores: Palmeiras vs Junior", link: "https://streamx741.com/global2.php?channel=espn2mx" },
+  { time: "19:00", match: "Copa Libertadores: Palmeiras vs Junior", link: "https://streamx741.com/global2.php?channel=fox2ar" },
+  { time: "19:00", match: "Copa Libertadores: Cerro Porteño vs Sporting Cristal", link: "https://streamx741.com/global2.php?channel=disney2" },
+  { time: "19:00", match: "Copa Libertadores: Cerro Porteño vs Sporting Cristal", link: "https://streamx741.com/global2.php?channel=fanatiz2" },
+  { time: "19:00", match: "Copa Libertadores: Cerro Porteño vs Sporting Cristal", link: "https://streamx741.com/global2.php?channel=espn2" },
+  { time: "19:00", match: "Copa Libertadores: Cerro Porteño vs Sporting Cristal", link: "https://streamx741.com/global2.php?channel=fox3ar" },
+  { time: "21:30", match: "Copa Libertadores: Boca Juniors vs Universidad Católica", link: "https://streamx741.com/global2.php?channel=disney3" },
+  { time: "21:30", match: "Copa Libertadores: Boca Juniors vs Universidad Católica", link: "https://streamx741.com/global2.php?channel=fanatiz3" },
+  { time: "21:30", match: "Copa Libertadores: Boca Juniors vs Universidad Católica", link: "https://streamx741.com/global2.php?channel=fox1ar" },
+  { time: "21:30", match: "Copa Libertadores: Boca Juniors vs Universidad Católica", link: "https://streamx741.com/global2.php?channel=espn2" },
+  { time: "21:30", match: "Copa Libertadores: Boca Juniors vs Universidad Católica", link: "https://streamx741.com/global2.php?channel=espn2mx" },
+  { time: "21:30", match: "Copa Libertadores: Cruzeiro vs Barcelona SC", link: "https://streamx741.com/global2.php?channel=disney4" },
+  { time: "21:30", match: "Copa Libertadores: Cruzeiro vs Barcelona SC", link: "https://streamx741.com/global2.php?channel=fanatiz4" },
+  { time: "21:30", match: "Copa Libertadores: Cruzeiro vs Barcelona SC", link: "https://streamx741.com/global2.php?channel=espn7" },
+  { time: "21:30", match: "Copa Libertadores: Cruzeiro vs Barcelona SC", link: "https://streamx741.com/global2.php?channel=fox2ar" },
+  { time: "21:30", match: "Copa Sudamericana: América de Cali vs Macará", link: "https://streamx741.com/global2.php?channel=disney5" },
+  { time: "21:30", match: "Copa Sudamericana: América de Cali vs Macará", link: "https://streamx741.com/global2.php?channel=fanatiz5" },
+  { time: "21:30", match: "Copa Sudamericana: América de Cali vs Macará", link: "https://streamx741.com/global2.php?channel=espn" },
+  { time: "21:30", match: "Copa Sudamericana: Tigre vs Alianza Atlético", link: "https://streamx741.com/global2.php?channel=disney6" },
+  { time: "21:30", match: "Copa Sudamericana: Tigre vs Alianza Atlético", link: "https://streamx741.com/global2.php?channel=fanatiz6" },
+  { time: "21:30", match: "Copa Sudamericana: Tigre vs Alianza Atlético", link: "https://streamx741.com/global2.php?channel=espn5" },
+  { time: "21:30", match: "NBA: Thunder vs Spurs", link: "https://streamx741.com/global2.php?channel=amazon1" },
+  { time: "21:30", match: "NBA: Thunder vs Spurs", link: "https://streamx741.com/global2.php?channel=max1" }
+];
 
 // =====================================================
 // DATOS DE EVENTOS DESTACADOS (MANUAL)

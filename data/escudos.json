@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "match": "República de Irlanda vs Qatar",
+    "homeLogo": "https://cdn.cookielaw.org/logos/static/ot_company_logo.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/QXUbAsYg-xdsSUnwr.png"
+  },
+  {
+    "match": "Palmeiras vs Junior",
+    "homeLogo": "https://static.flashscore.com/res/image/data/xCtpyPHG-ALgHCh57.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/Kz2UFMh5-G2820wU0.png"
+  },
+  {
+    "match": "Cerro Porteño vs Sporting Cristal",
+    "homeLogo": "https://static.flashscore.com/res/image/data/Ovlb3hBr-0fSZKKz2.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/bT8P90Ar-Em9Gxj8O.png"
+  },
+  {
+    "match": "Boca Juniors vs Universidad Católica",
+    "homeLogo": "https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/50e7da04-6112-4255-b12f-56733e38ba02.avif",
+    "awayLogo": "https://cdn.cookielaw.org/logos/static/ot_company_logo.png"
+  },
+  {
+    "match": "Cruzeiro vs Barcelona SC",
+    "homeLogo": "https://static.flashscore.com/res/image/data/lCWrxmg5-SjJmyx86.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/nit9vJwS-WErjuywa.png"
+  },
+  {
+    "match": "América de Cali vs Macará",
+    "homeLogo": "https://static.flashscore.com/res/image/data/fySikCAr-hSZHTo4B.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/4tKF7Wh5-0C12xtlP.png"
+  },
+  {
+    "match": "Tigre vs Alianza Atlético",
+    "homeLogo": "https://static.flashscore.com/res/image/data/dG6N1MfM-ENHpchZ2.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/Miy4LAeM-z942qmGf.png"
+  },
+  {
+    "match": "Thunder vs Spurs",
+    "homeLogo": "https://static.flashscore.com/res/image/data/bFgddNh5-4zc22IQb.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/8f2WVCFG-SrHHDGUm.png"
+  }
+]
