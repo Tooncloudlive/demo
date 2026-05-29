@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ToonCloud Deportes</title>
-<!-- Build: 2026-05-29 09:32 | Events: 0 | Logos: 0 -->
+<!-- Build: 2026-05-29 20:10 | Events: 15 | Logos: 9 -->
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1493,12 +1493,38 @@ header {
 // El formato es: { match: "Equipo Local vs Equipo Visitante", homeLogo: "URL_ESCUDO_LOCAL", awayLogo: "URL_ESCUDO_VISITANTE" }
 // Si no quieres escudo para un equipo, deja el campo vacio: ""
 
-const matchesLogos = [];
+const matchesLogos = [
+  { match: "Bosnia-Herzegovina vs Macedonia del Norte", homeLogo: "https://static.flashscore.com/res/image/data/ERFR3ZYA-Cfuwb3yH.png", awayLogo: "https://static.flashscore.com/res/image/data/hhJjv8g5-zXtZbqMA.png" },
+  { match: "Nice vs Saint-Étienne - Relegation Playoff (2/2)", homeLogo: "https://static.flashscore.com/res/image/data/boyRUvyB-00sqJmg8.png", awayLogo: "https://static.flashscore.com/res/image/data/b7wgpIDa-8Ca53MKO.png" },
+  { match: "Atlético Grau vs Deportivo Moquegua", homeLogo: "https://static.flashscore.com/res/image/data/l6DT03h5-OIQgs2YQ.png", awayLogo: "https://static.flashscore.com/res/image/data/YwmtayEa-zXduG1dl.png" },
+  { match: "Envigado vs Real Cartagena - Final (2/2)", homeLogo: "https://static.flashscore.com/res/image/data/pQrkdmhl-2XZjQRJG.png", awayLogo: "https://static.flashscore.com/res/image/data/8pmdmdWg-zVgW5cY1.png" },
+  { match: "Cobresal vs Ñublense", homeLogo: "https://static.flashscore.com/res/image/data/zLKcbhyS-p8NClxtb.png", awayLogo: "https://static.flashscore.com/res/image/data/MVoXktAr-KM9757Oh.png" },
+  { match: "Cerro Largo vs Cerro", homeLogo: "https://static.flashscore.com/res/image/data/bmaSNUil-2c38J1pB.png", awayLogo: "https://static.flashscore.com/res/image/data/8MMCZtGG-dUH9C2gd.png" },
+  { match: "Leones vs Medellín", homeLogo: "https://static.flashscore.com/res/image/data/tpBPaidM-ldtTlNn4.png", awayLogo: "https://static.flashscore.com/res/image/data/lMyrsdhl-plopiAtN.png" },
+  { match: "Univ. Concepción vs Unión La Calera", homeLogo: "https://static.flashscore.com/res/image/data/nkZ3BZjl-KbTonrXB.png", awayLogo: "https://static.flashscore.com/res/image/data/AJdiRXkl-0p3SjwUb.png" },
+  { match: "Atlético Cali vs Millonarios", homeLogo: "https://static.flashscore.com/res/image/data/n9uLPnDr-YkXz5hTm.png", awayLogo: "https://static.flashscore.com/res/image/data/COAjhCg5-6kduDy6P.png" }
+];
 
 // =====================================================
 // DATOS DE EVENTOS
 // =====================================================
-const eventsData = [];
+const eventsData = [
+  { time: "15:30", match: "Amistoso Internacional: Bosnia-Herzegovina vs Macedonia del Norte", link: "https://streamx741.com/global2.php?channel=disney1" },
+  { time: "15:45", match: "Ligue 1: Nice vs Saint-Étienne - Relegation Playoff (2/2)", link: "https://streamx741.com/global2.php?channel=foxone1" },
+  { time: "15:45", match: "Ligue 1: Nice vs Saint-Étienne - Relegation Playoff (2/2)", link: "https://streamx741.com/global2.php?channel=disney2" },
+  { time: "15:45", match: "Ligue 1: Nice vs Saint-Étienne - Relegation Playoff (2/2)", link: "https://streamx741.com/global2.php?channel=espn4" },
+  { time: "17:00", match: "Liga 1: Atlético Grau vs Deportivo Moquegua", link: "https://streamx741.com/global2.php?channel=liga1max" },
+  { time: "17:00", match: "Liga 1: Atlético Grau vs Deportivo Moquegua", link: "https://streamx741.com/global2.php?channel=fanatiz1" },
+  { time: "17:00", match: "Primera B: Envigado vs Real Cartagena - Final (2/2)", link: "https://streamx741.com/global2.php?channel=winplus" },
+  { time: "17:00", match: "Primera B: Envigado vs Real Cartagena - Final (2/2)", link: "https://streamx741.com/global2.php?channel=winplus2" },
+  { time: "19:00", match: "Liga de Primera: Cobresal vs Ñublense", link: "https://streamx741.com/global2.php?channel=max1" },
+  { time: "19:30", match: "Primera División: Cerro Largo vs Cerro", link: "https://streamx741.com/global2.php?channel=disney3" },
+  { time: "20:00", match: "Copa Colombia: Leones vs Medellín", link: "https://streamx741.com/global2.php?channel=winplus" },
+  { time: "20:00", match: "Copa Colombia: Leones vs Medellín", link: "https://streamx741.com/global2.php?channel=winplus2" },
+  { time: "21:30", match: "Liga de Primera: Univ. Concepción vs Unión La Calera", link: "https://streamx741.com/global2.php?channel=max2" },
+  { time: "22:10", match: "Copa Colombia: Atlético Cali vs Millonarios", link: "https://streamx741.com/global2.php?channel=winplus" },
+  { time: "22:10", match: "Copa Colombia: Atlético Cali vs Millonarios", link: "https://streamx741.com/global2.php?channel=winplus2" }
+];
 
 // =====================================================
 // DATOS DE EVENTOS DESTACADOS (MANUAL)
