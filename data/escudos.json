@@ -1,35 +1,5 @@
 [
   {
-    "match": "Escocia vs Curazao",
-    "homeLogo": "https://static.flashscore.com/res/image/data/lf3kdFwS-lfZlm1uk.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/bJ37l5f5-dERAD3h1.png"
-  },
-  {
-    "match": "Racing vs Defensor Sporting",
-    "homeLogo": "https://static.flashscore.com/res/image/data/v12aAjil-YRdHXM28.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/UgKB6TzS-vZdejfYC.png"
-  },
-  {
-    "match": "Ceuta vs Albacete",
-    "homeLogo": "https://static.flashscore.com/res/image/data/xIxIQ3f5-xpqBFn5c.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/M9tNPVfM-4297a0ys.png"
-  },
-  {
-    "match": "Real Sociedad II vs Cultural Leonesa",
-    "homeLogo": "https://static.flashscore.com/res/image/data/d0CDHeh5-U144u08h.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/UNSRimZg-WAOkzK99.png"
-  },
-  {
-    "match": "PSG vs Arsenal - Final",
-    "homeLogo": "https://static.flashscore.com/res/image/data/EskJufg5-A7UDDuOO.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/pfchdCg5-vcNAdtF9.png"
-  },
-  {
-    "match": "ADT vs Cusco",
-    "homeLogo": "https://cdn.cookielaw.org/logos/static/ot_company_logo.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/OjnbBwXg-06OeOzI0.png"
-  },
-  {
     "match": "Danubio vs Progreso",
     "homeLogo": "https://static.flashscore.com/res/image/data/SE9ju9cM-vaUkIxVj.png",
     "awayLogo": "https://static.flashscore.com/res/image/data/Ywxr8RFG-txbJkCjs.png"
@@ -51,8 +21,8 @@
   },
   {
     "match": "Athletico-PR vs Mirassol",
-    "homeLogo": "https://static.flashscore.com/res/image/data/Ig3j56Ca-OIECkXSi.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/C8fyvKXg-00ap035Q.png"
+    "homeLogo": "https://static.flashscore.com/res/image/data/SdnmINcM-QaMaOfUh.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/SUmYTyAr-fVnYQB8j.png"
   },
   {
     "match": "Flamengo vs Coritiba",
@@ -60,9 +30,14 @@
     "awayLogo": "https://static.flashscore.com/res/image/data/xKm8lie5-bwYqIWsq.png"
   },
   {
+    "match": "Deportivo Garcilaso vs Juan Pablo II College",
+    "homeLogo": "https://static.flashscore.com/res/image/data/hQp9ywwS-rV5EZZh1.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/YRQE9BFG-CrkK62Mu.png"
+  },
+  {
     "match": "Bahia vs Botafogo",
-    "homeLogo": "https://static.flashscore.com/res/image/data/EJwzXngl-I933qJPg.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/jBDSUABr-ldMpXQG1.png"
+    "homeLogo": "https://static.flashscore.com/res/image/data/f5V5z1Cr-dKUmd286.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/lduff8Ca-dA1p8k46.png"
   },
   {
     "match": "Grêmio vs Corinthians",
@@ -73,11 +48,6 @@
     "match": "Instituto vs Lanús",
     "homeLogo": "https://static.flashscore.com/res/image/data/Y9hE69g5-ImUFDktI.png",
     "awayLogo": "https://static.flashscore.com/res/image/data/h4Xuyuf5-xQnxBzcF.png"
-  },
-  {
-    "match": "Universidad Chile vs Deportes Concepción",
-    "homeLogo": "https://static.flashscore.com/res/image/data/lS666WGG-fuSaShZI.png",
-    "awayLogo": "https://static.flashscore.com/res/image/data/nmpUa0FG-Eq74Jcjl.png"
   },
   {
     "match": "Sport Boys vs Comerciantes Unidos",

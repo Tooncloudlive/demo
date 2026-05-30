@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ToonCloud Deportes</title>
-<!-- Build: 2026-05-30 08:27 | Events: 49 | Logos: 23 -->
+<!-- Build: 2026-05-30 19:06 | Events: 36 | Logos: 17 -->
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1494,22 +1494,16 @@ header {
 // Si no quieres escudo para un equipo, deja el campo vacio: ""
 
 const matchesLogos = [
-  { match: "Escocia vs Curazao", homeLogo: "https://static.flashscore.com/res/image/data/lf3kdFwS-lfZlm1uk.png", awayLogo: "https://static.flashscore.com/res/image/data/bJ37l5f5-dERAD3h1.png" },
-  { match: "Racing vs Defensor Sporting", homeLogo: "https://static.flashscore.com/res/image/data/v12aAjil-YRdHXM28.png", awayLogo: "https://static.flashscore.com/res/image/data/UgKB6TzS-vZdejfYC.png" },
-  { match: "Ceuta vs Albacete", homeLogo: "https://static.flashscore.com/res/image/data/xIxIQ3f5-xpqBFn5c.png", awayLogo: "https://static.flashscore.com/res/image/data/M9tNPVfM-4297a0ys.png" },
-  { match: "Real Sociedad II vs Cultural Leonesa", homeLogo: "https://static.flashscore.com/res/image/data/d0CDHeh5-U144u08h.png", awayLogo: "https://static.flashscore.com/res/image/data/UNSRimZg-WAOkzK99.png" },
-  { match: "PSG vs Arsenal - Final", homeLogo: "https://static.flashscore.com/res/image/data/EskJufg5-A7UDDuOO.png", awayLogo: "https://static.flashscore.com/res/image/data/pfchdCg5-vcNAdtF9.png" },
-  { match: "ADT vs Cusco", homeLogo: "https://cdn.cookielaw.org/logos/static/ot_company_logo.png", awayLogo: "https://static.flashscore.com/res/image/data/OjnbBwXg-06OeOzI0.png" },
   { match: "Danubio vs Progreso", homeLogo: "https://static.flashscore.com/res/image/data/SE9ju9cM-vaUkIxVj.png", awayLogo: "https://static.flashscore.com/res/image/data/Ywxr8RFG-txbJkCjs.png" },
   { match: "Gimnasia Jujuy vs Belgrano", homeLogo: "https://static.flashscore.com/res/image/data/Q5xM00wS-przZKXwb.png", awayLogo: "https://static.flashscore.com/res/image/data/fVzQ4lxS-jXvNrLYt.png" },
   { match: "La Serena vs Colo-Colo", homeLogo: "https://static.flashscore.com/res/image/data/YDcd9wDa-Mkzo6oBm.png", awayLogo: "https://static.flashscore.com/res/image/data/CMCTeMxS-tnwDCzLD.png" },
   { match: "Granada vs Sporting Gijón", homeLogo: "https://static.flashscore.com/res/image/data/8AhQm2xS-pEzOUfJL.png", awayLogo: "https://static.flashscore.com/res/image/data/n9PvyJhl-IDZgZhUt.png" },
-  { match: "Athletico-PR vs Mirassol", homeLogo: "https://static.flashscore.com/res/image/data/Ig3j56Ca-OIECkXSi.png", awayLogo: "https://static.flashscore.com/res/image/data/C8fyvKXg-00ap035Q.png" },
+  { match: "Athletico-PR vs Mirassol", homeLogo: "https://static.flashscore.com/res/image/data/SdnmINcM-QaMaOfUh.png", awayLogo: "https://static.flashscore.com/res/image/data/SUmYTyAr-fVnYQB8j.png" },
   { match: "Flamengo vs Coritiba", homeLogo: "https://static.flashscore.com/res/image/data/ADvIaiZA-2R2JjDQC.png", awayLogo: "https://static.flashscore.com/res/image/data/xKm8lie5-bwYqIWsq.png" },
-  { match: "Bahia vs Botafogo", homeLogo: "https://static.flashscore.com/res/image/data/EJwzXngl-I933qJPg.png", awayLogo: "https://static.flashscore.com/res/image/data/jBDSUABr-ldMpXQG1.png" },
+  { match: "Deportivo Garcilaso vs Juan Pablo II College", homeLogo: "https://static.flashscore.com/res/image/data/hQp9ywwS-rV5EZZh1.png", awayLogo: "https://static.flashscore.com/res/image/data/YRQE9BFG-CrkK62Mu.png" },
+  { match: "Bahia vs Botafogo", homeLogo: "https://static.flashscore.com/res/image/data/f5V5z1Cr-dKUmd286.png", awayLogo: "https://static.flashscore.com/res/image/data/lduff8Ca-dA1p8k46.png" },
   { match: "Grêmio vs Corinthians", homeLogo: "https://static.flashscore.com/res/image/data/QPdJscAr-tQsU6dGl.png", awayLogo: "https://static.flashscore.com/res/image/data/lY91WW9r-6cpWH3kh.png" },
   { match: "Instituto vs Lanús", homeLogo: "https://static.flashscore.com/res/image/data/Y9hE69g5-ImUFDktI.png", awayLogo: "https://static.flashscore.com/res/image/data/h4Xuyuf5-xQnxBzcF.png" },
-  { match: "Universidad Chile vs Deportes Concepción", homeLogo: "https://static.flashscore.com/res/image/data/lS666WGG-fuSaShZI.png", awayLogo: "https://static.flashscore.com/res/image/data/nmpUa0FG-Eq74Jcjl.png" },
   { match: "Sport Boys vs Comerciantes Unidos", homeLogo: "https://static.flashscore.com/res/image/data/bLzfZKZA-fFhdpXur.png", awayLogo: "https://static.flashscore.com/res/image/data/lOuqQhhl-8dieWfgh.png" },
   { match: "Santos vs Vitória", homeLogo: "https://static.flashscore.com/res/image/data/rJGaKUhl-hv442jSk.png", awayLogo: "https://static.flashscore.com/res/image/data/4KqE5MXg-2LsN1p8S.png" },
   { match: "Ecuador vs Arabia Saudita", homeLogo: "https://static.flashscore.com/res/image/data/Qkovv0wS-IPF97VQ3.png", awayLogo: "https://static.flashscore.com/res/image/data/G6x4A5zB-KtpTLRpL.png" },
@@ -1523,19 +1517,6 @@ const matchesLogos = [
 // DATOS DE EVENTOS
 // =====================================================
 const eventsData = [
-  { time: "09:00", match: "Amistoso Internacional: Escocia vs Curazao", link: "https://streamx741.com/global2.php?channel=disney1" },
-  { time: "10:00", match: "Primera División: Racing vs Defensor Sporting", link: "https://streamx741.com/global2.php?channel=disney2" },
-  { time: "11:15", match: "LaLiga 2: Ceuta vs Albacete", link: "https://streamx741.com/global2.php?channel=hyper1" },
-  { time: "11:15", match: "LaLiga 2: Real Sociedad II vs Cultural Leonesa", link: "https://streamx741.com/global2.php?channel=hyper2" },
-  { time: "13:00", match: "UEFA Champions League: PSG vs Arsenal - Final", link: "https://streamx741.com/ott.php?id=la1spain" },
-  { time: "13:00", match: "UEFA Champions League: PSG vs Arsenal - Final", link: "https://streamx741.com/global2.php?channel=foxone1" },
-  { time: "13:00", match: "UEFA Champions League: PSG vs Arsenal - Final", link: "https://streamx741.com/global2.php?channel=max1" },
-  { time: "13:00", match: "UEFA Champions League: PSG vs Arsenal - Final", link: "https://streamx741.com/global2.php?channel=disney3" },
-  { time: "13:00", match: "UEFA Champions League: PSG vs Arsenal - Final", link: "https://streamx741.com/global2.php?channel=espn" },
-  { time: "13:00", match: "UEFA Champions League: PSG vs Arsenal - Final", link: "https://streamx741.com/global2.php?channel=fox1ar" },
-  { time: "13:00", match: "UEFA Champions League: PSG vs Arsenal - Final", link: "https://streamx741.com/global2.php?channel=tudnus" },
-  { time: "13:00", match: "Liga 1: ADT vs Cusco", link: "https://streamx741.com/global2.php?channel=liga1max" },
-  { time: "13:00", match: "Liga 1: ADT vs Cusco", link: "https://streamx741.com/global2.php?channel=fanatiz1" },
   { time: "15:00", match: "Primera División: Danubio vs Progreso", link: "https://streamx741.com/global2.php?channel=disney4" },
   { time: "15:30", match: "Copa Argentina: Gimnasia Jujuy vs Belgrano", link: "https://streamx741.com/global2.php?channel=tyc" },
   { time: "15:30", match: "Copa Argentina: Gimnasia Jujuy vs Belgrano", link: "https://streamx741.com/global2.php?channel=tycint" },
