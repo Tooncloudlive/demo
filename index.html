@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ToonCloud Deportes</title>
-<!-- Build: 2026-05-31 08:47 | Events: 49 | Logos: 31 -->
+<!-- Build: 2026-05-31 19:09 | Events: 30 | Logos: 18 -->
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1494,23 +1494,10 @@ header {
 // Si no quieres escudo para un equipo, deja el campo vacio: ""
 
 const matchesLogos = [
-  { match: "Japón vs Islandia", homeLogo: "https://static.flashscore.com/res/image/data/Crg4NaGG-8toS1iya.png", awayLogo: "https://static.flashscore.com/res/image/data/t6Z77hZg-vokh4vbj.png" },
-  { match: "Albion vs Torque", homeLogo: "https://static.flashscore.com/res/image/data/YTykoqh5-xAzQVWsQ.png", awayLogo: "https://cdn.cookielaw.org/logos/static/ot_company_logo.png" },
-  { match: "Suiza vs Jordania", homeLogo: "https://static.flashscore.com/res/image/data/tWvN5N9r-88LAtdNt.png", awayLogo: "https://static.flashscore.com/res/image/data/4nL6jkg5-4EsvakLH.png" },
-  { match: "República Checa vs Kosovo", homeLogo: "https://static.flashscore.com/res/image/data/UH0CqZdM-b1xaMyVe.png", awayLogo: "https://static.flashscore.com/res/image/data/jup8COkl-WnYHA9YO.png" },
-  { match: "RB Bragantino vs Internacional", homeLogo: "https://static.flashscore.com/res/image/data/xxm5TNfM-zV7mJUhj.png", awayLogo: "https://static.flashscore.com/res/image/data/GCQNZSDa-ITXtcCo1.png" },
-  { match: "Polonia vs Ucrania", homeLogo: "https://static.flashscore.com/res/image/data/zB15YqDr-vZG58BBc.png", awayLogo: "https://static.flashscore.com/res/image/data/Q3KOlYVg-IPF97VQ3.png" },
-  { match: "Melgar vs Alianza Atlético", homeLogo: "https://static.flashscore.com/res/image/data/fmdls5HG-dl2Dbcr1.png", awayLogo: "https://static.flashscore.com/res/image/data/Miy4LAeM-z942qmGf.png" },
-  { match: "CD Castellon vs Eibar", homeLogo: "https://static.flashscore.com/res/image/data/lxWg57g5-zBFXR8iF.png", awayLogo: "https://static.flashscore.com/res/image/data/CvetxaAr-4U3vjZKk.png" },
-  { match: "Deportivo La Coruña vs Las Palmas", homeLogo: "https://static.flashscore.com/res/image/data/bsKstwAr-UZkpPVoT.png", awayLogo: "https://static.flashscore.com/res/image/data/44xPoqHG-d6gaf9ua.png" },
-  { match: "Burgos vs FC Andorra", homeLogo: "https://static.flashscore.com/res/image/data/0AalHeAr-0ME49KyM.png", awayLogo: "https://static.flashscore.com/res/image/data/AqQKdNHG-p6WBruc4.png" },
-  { match: "Racing Santander vs Cádiz", homeLogo: "https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/fca88a05-f05c-43f2-adc2-b5b2bdd5223d.avif", awayLogo: "https://static.flashscore.com/res/image/data/0Q4qMJeM-EPWyZtpb.png" },
-  { match: "Real Zaragoza vs Málaga", homeLogo: "https://static.flashscore.com/res/image/data/xAVdihZA-EykfZB0Q.png", awayLogo: "https://static.flashscore.com/res/image/data/b7abRme5-MTxwaw7C.png" },
-  { match: "Almería vs Real Valladolid", homeLogo: "https://static.flashscore.com/res/image/data/8C5Bj3wS-nDyT2xMM.png", awayLogo: "https://static.flashscore.com/res/image/data/pCJjU8yB-htRvrFH6.png" },
   { match: "Juventud vs Wanderers", homeLogo: "https://static.flashscore.com/res/image/data/6XyukXjl-WIGOXbOL.png", awayLogo: "https://static.flashscore.com/res/image/data/WCc1ByCa-zFwegNb8.png" },
   { match: "FC Cajamarca vs Alianza Lima", homeLogo: "https://static.flashscore.com/res/image/data/txvKJLh5-vJhlopip.png", awayLogo: "https://static.flashscore.com/res/image/data/OdDDfjWg-tE1csI3A.png" },
   { match: "Estudiantes LP vs Rosario Central", homeLogo: "https://static.flashscore.com/res/image/data/fka7Uhe5-2aA5n1nK.png", awayLogo: "https://static.flashscore.com/res/image/data/hKqVGwgl-vuxu02Jt.png" },
-  { match: "Alemania vs Finlandia", homeLogo: "https://static.flashscore.com/res/image/data/GnhS6DUH-EBy7yz6d.png", awayLogo: "https://static.flashscore.com/res/image/data/2PclKESq-OYQpqern.png" },
+  { match: "Alemania vs Finlandia", homeLogo: "https://static.flashscore.com/res/image/data/zP226aXg-fB4vYUZp.png", awayLogo: "https://static.flashscore.com/res/image/data/Mmyh0ByS-08oJ2RMo.png" },
   { match: "Huachipato vs Universidad Católica", homeLogo: "https://static.flashscore.com/res/image/data/v7pzlUCa-xIMey4eD.png", awayLogo: "https://static.flashscore.com/res/image/data/OvyAhfyB-nRWWeW7h.png" },
   { match: "Palmeiras vs Chapecoense", homeLogo: "https://static.flashscore.com/res/image/data/xCtpyPHG-ALgHCh57.png", awayLogo: "https://static.flashscore.com/res/image/data/v9EKoUeM-CYex0lQl.png" },
   { match: "Leganés vs Mirandés", homeLogo: "https://static.flashscore.com/res/image/data/IqhNyYjl-Q3zX1dyT.png", awayLogo: "https://static.flashscore.com/res/image/data/0pN1qrxS-ns1CJmLE.png" },
@@ -1521,9 +1508,9 @@ const matchesLogos = [
   { match: "O'Higgins vs Everton", homeLogo: "https://static.flashscore.com/res/image/data/f1MK7GzS-zPh2QHcM.png", awayLogo: "https://static.flashscore.com/res/image/data/IaM72BCr-futBA1p8.png" },
   { match: "Deportivo Maldonado vs Nacional", homeLogo: "https://static.flashscore.com/res/image/data/KULuUkCr-xvp8ggnJ.png", awayLogo: "https://static.flashscore.com/res/image/data/WUIDNjFa-xErFNzEn.png" },
   { match: "Cienciano vs Sporting Cristal", homeLogo: "https://static.flashscore.com/res/image/data/dI31wDil-Mu345fFj.png", awayLogo: "https://static.flashscore.com/res/image/data/bT8P90Ar-Em9Gxj8O.png" },
-  { match: "Racing Club vs Defensa y Justicia", homeLogo: "https://static.flashscore.com/res/image/data/C45M9SfM-8QvfsfEs.png", awayLogo: "https://static.flashscore.com/res/image/data/rLXRy3Yg-hO996oiS.png" },
+  { match: "Racing Club vs Defensa y Justicia", homeLogo: "https://static.flashscore.com/res/image/data/6T5YTkZA-OCiVKiPK.png", awayLogo: "https://static.flashscore.com/res/image/data/WbcBGVf5-QcmznTSR.png" },
   { match: "Remo vs São Paulo", homeLogo: "https://static.flashscore.com/res/image/data/dWTc9iBr-vsDPUWUH.png", awayLogo: "https://static.flashscore.com/res/image/data/YgK3qNCa-AkTesf41.png" },
-  { match: "Cruzeiro vs Fluminense", homeLogo: "https://static.flashscore.com/res/image/data/lCWrxmg5-SjJmyx86.png", awayLogo: "https://static.flashscore.com/res/image/data/WlxJgSdM-WUfDDYk1.png" },
+  { match: "Cruzeiro vs Fluminense", homeLogo: "https://static.flashscore.com/res/image/data/tE3XE0Ca-re7YM05n.png", awayLogo: "https://static.flashscore.com/res/image/data/ryyNRNyS-G8svG3to.png" },
   { match: "Palestino vs Audax Italiano", homeLogo: "https://static.flashscore.com/res/image/data/GxmUk4dM-Mofbp184.png", awayLogo: "https://static.flashscore.com/res/image/data/fZSe86hl-6kEqxN0C.png" }
 ];
 
@@ -1531,25 +1518,6 @@ const matchesLogos = [
 // DATOS DE EVENTOS
 // =====================================================
 const eventsData = [
-  { time: "07:25", match: "Amistoso Internacional: Japón vs Islandia", link: "https://streamx741.com/global2.php?channel=sportv1" },
-  { time: "10:00", match: "Primera División: Albion vs Torque", link: "https://streamx741.com/global2.php?channel=disney1" },
-  { time: "10:00", match: "Amistoso Internacional: Suiza vs Jordania", link: "https://streamx741.com/global2.php?channel=disney2" },
-  { time: "10:00", match: "Amistoso Internacional: Suiza vs Jordania", link: "https://streamx741.com/global2.php?channel=espn" },
-  { time: "11:00", match: "Amistoso Internacional: República Checa vs Kosovo", link: "https://streamx741.com/global2.php?channel=disney3" },
-  { time: "11:00", match: "Brasileirão: RB Bragantino vs Internacional", link: "https://streamx741.com/global2.php?channel=fanatiz1" },
-  { time: "11:00", match: "Brasileirão: RB Bragantino vs Internacional", link: "https://streamx741.com/global2.php?channel=premiere1" },
-  { time: "12:30", match: "Amistoso Internacional: Polonia vs Ucrania", link: "https://streamx741.com/global2.php?channel=disney4" },
-  { time: "12:30", match: "Amistoso Internacional: Polonia vs Ucrania", link: "https://streamx741.com/global2.php?channel=sportv1" },
-  { time: "13:00", match: "Liga 1: Melgar vs Alianza Atlético", link: "https://streamx741.com/global2.php?channel=liga1max" },
-  { time: "13:00", match: "Liga 1: Melgar vs Alianza Atlético", link: "https://streamx741.com/global2.php?channel=fanatiz2" },
-  { time: "13:30", match: "Liga de Primera: Deportes Limache vs Coquimbo Unido", link: "https://streamx741.com/global2.php?channel=max1" },
-  { time: "13:30", match: "LaLiga 2: Multigol", link: "https://streamx741.com/global2.php?channel=hyper1" },
-  { time: "13:30", match: "LaLiga 2: CD Castellon vs Eibar", link: "https://streamx741.com/global2.php?channel=hyper2" },
-  { time: "13:30", match: "LaLiga 2: Deportivo La Coruña vs Las Palmas", link: "https://streamx741.com/global2.php?channel=hyper3" },
-  { time: "13:30", match: "LaLiga 2: Burgos vs FC Andorra", link: "https://streamx741.com/global2.php?channel=disney5" },
-  { time: "13:30", match: "LaLiga 2: Racing Santander vs Cádiz", link: "https://streamx741.com/global2.php?channel=disney6" },
-  { time: "13:30", match: "LaLiga 2: Real Zaragoza vs Málaga", link: "https://streamx741.com/global2.php?channel=disney7" },
-  { time: "13:30", match: "LaLiga 2: Almería vs Real Valladolid", link: "https://streamx741.com/global2.php?channel=espnplus1" },
   { time: "15:00", match: "Primera División: Juventud vs Wanderers", link: "https://streamx741.com/global2.php?channel=disney8" },
   { time: "15:15", match: "Liga 1: FC Cajamarca vs Alianza Lima", link: "https://streamx741.com/global2.php?channel=liga1max" },
   { time: "15:15", match: "Liga 1: FC Cajamarca vs Alianza Lima", link: "https://streamx741.com/global2.php?channel=fanatiz3" },
