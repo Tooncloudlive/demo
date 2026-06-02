@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "match": "Gales vs Ghana",
+    "homeLogo": "https://static.flashscore.com/res/image/data/SdWlpUhl-YkZoQLK9.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/xr80n8zB-8vfTQDSH.png"
+  },
+  {
+    "match": "Haití vs Nueva Zelanda",
+    "homeLogo": "https://static.flashscore.com/res/image/data/OzGon6Da-GY05WHbt.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/Q1WkZDyS-zmDbXBOa.png"
+  },
+  {
+    "match": "Barracas Central vs Huracán",
+    "homeLogo": "https://static.flashscore.com/res/image/data/EkKbKgXg-KxCl9RDG.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/vBUdlvf5-xxyFAG42.png"
+  },
+  {
+    "match": "Junior vs Atlético Nacional - Final (1/2)",
+    "homeLogo": "https://static.flashscore.com/res/image/data/Kz2UFMh5-G2820wU0.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/EVh8vJcM-tnwDCzLD.png"
+  }
+]

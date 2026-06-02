@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ToonCloud Deportes</title>
-<!-- Build: 2026-06-02 09:59 | Events: 0 | Logos: 0 -->
+<!-- Build: 2026-06-02 20:35 | Events: 8 | Logos: 4 -->
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1493,12 +1493,26 @@ header {
 // El formato es: { match: "Equipo Local vs Equipo Visitante", homeLogo: "URL_ESCUDO_LOCAL", awayLogo: "URL_ESCUDO_VISITANTE" }
 // Si no quieres escudo para un equipo, deja el campo vacio: ""
 
-const matchesLogos = [];
+const matchesLogos = [
+  { match: "Gales vs Ghana", homeLogo: "https://static.flashscore.com/res/image/data/SdWlpUhl-YkZoQLK9.png", awayLogo: "https://static.flashscore.com/res/image/data/xr80n8zB-8vfTQDSH.png" },
+  { match: "Haití vs Nueva Zelanda", homeLogo: "https://static.flashscore.com/res/image/data/OzGon6Da-GY05WHbt.png", awayLogo: "https://static.flashscore.com/res/image/data/Q1WkZDyS-zmDbXBOa.png" },
+  { match: "Barracas Central vs Huracán", homeLogo: "https://static.flashscore.com/res/image/data/EkKbKgXg-KxCl9RDG.png", awayLogo: "https://static.flashscore.com/res/image/data/vBUdlvf5-xxyFAG42.png" },
+  { match: "Junior vs Atlético Nacional - Final (1/2)", homeLogo: "https://static.flashscore.com/res/image/data/Kz2UFMh5-G2820wU0.png", awayLogo: "https://static.flashscore.com/res/image/data/EVh8vJcM-tnwDCzLD.png" }
+];
 
 // =====================================================
 // DATOS DE EVENTOS
 // =====================================================
-const eventsData = [];
+const eventsData = [
+  { time: "15:45", match: "Amistoso Internacional: Gales vs Ghana", link: "https://streamx741.com/global2.php?channel=disney3" },
+  { time: "15:45", match: "Amistoso Internacional: Gales vs Ghana", link: "https://streamx741.com/global2.php?channel=espn" },
+  { time: "21:00", match: "Amistoso Internacional: Haití vs Nueva Zelanda", link: "https://streamx741.com/global2.php?channel=foxdeportes" },
+  { time: "21:10", match: "Copa Argentina: Barracas Central vs Huracán", link: "https://streamx741.com/global2.php?channel=fanatiz1" },
+  { time: "21:10", match: "Copa Argentina: Barracas Central vs Huracán", link: "https://streamx741.com/global2.php?channel=tyc" },
+  { time: "21:30", match: "Liga BetPlay: Junior vs Atlético Nacional - Final (1/2)", link: "https://streamx741.com/global2.php?channel=fanatiz2" },
+  { time: "21:30", match: "Liga BetPlay: Junior vs Atlético Nacional - Final (1/2)", link: "https://streamx741.com/global2.php?channel=winplus" },
+  { time: "21:30", match: "Liga BetPlay: Junior vs Atlético Nacional - Final (1/2)", link: "https://streamx741.com/global2.php?channel=winplus2" }
+];
 
 // =====================================================
 // DATOS DE EVENTOS DESTACADOS (MANUAL)
