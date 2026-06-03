@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "match": "Corea del Sur vs El Salvador",
+    "homeLogo": "https://static.flashscore.com/res/image/data/zTP55fFG-63aNArwB.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/h81TtGWg-raJr9r28.png"
+  },
+  {
+    "match": "Knicks vs Spurs - Finals Game #1",
+    "homeLogo": "https://static.flashscore.com/res/image/data/UBTxFpcM-I30Q0K9l.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/8f2WVCFG-SrHHDGUm.png"
+  },
+  {
+    "match": "Panamá vs República Dominicana",
+    "homeLogo": "https://static.flashscore.com/res/image/data/GjtXYjcM-6yXdouA1.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/lxrfbgcM-raJr9r28.png"
+  }
+]
