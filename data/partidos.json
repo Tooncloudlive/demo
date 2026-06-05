@@ -1,12 +1,67 @@
 [
   {
-    "time": "08:30",
-    "match": "F1 | GP de Mónaco: Entrenamientos #1",
+    "time": "14:45",
+    "match": "Amistoso Internacional: Hungría vs Finlandia",
+    "link": "https://streamx741.com/global2.php?channel=disney8"
+  },
+  {
+    "time": "15:00",
+    "match": "Amistoso Internacional: Azerbaiyán vs Malta",
+    "link": "https://streamx741.com/global2.php?channel=disney9"
+  },
+  {
+    "time": "19:00",
+    "match": "Primera División: Wanderers vs Danubio",
     "link": "https://streamx741.com/global2.php?channel=disney1"
   },
   {
-    "time": "08:30",
-    "match": "F1 | GP de Mónaco: Entrenamientos #1",
-    "link": "https://streamx741.com/global2.php?channel=skyf1mx"
+    "time": "19:15",
+    "match": "Amistoso Internacional: Paraguay vs Nicaragua",
+    "link": "https://streamx741.com/global2.php?channel=eventos3"
+  },
+  {
+    "time": "20:30",
+    "match": "Amistoso Internacional: Canadá vs República de Irlanda",
+    "link": "https://streamx741.com/global2.php?channel=tsn4"
+  },
+  {
+    "time": "20:30",
+    "match": "Amistoso Internacional: Canadá vs República de Irlanda",
+    "link": "https://streamx741.com/global2.php?channel=fox2usa"
+  },
+  {
+    "time": "21:00",
+    "match": "Amistoso Internacional: Haití vs Perú",
+    "link": "https://streamx741.com/global2.php?channel=eventos2"
+  },
+  {
+    "time": "21:00",
+    "match": "Amistoso Internacional: Haití vs Perú",
+    "link": "https://streamx741.com/global2.php?channel=eventos1"
+  },
+  {
+    "time": "21:00",
+    "match": "Amistoso Internacional: Haití vs Perú",
+    "link": "https://streamx741.com/global2.php?channel=foxdeportes"
+  },
+  {
+    "time": "21:00",
+    "match": "Amistoso Internacional: Haití vs Perú",
+    "link": "https://streamx741.com/global2.php?channel=sportv1"
+  },
+  {
+    "time": "21:00",
+    "match": "Copa de la Liga: Deportes Concepción vs Coquimbo Unido",
+    "link": "https://streamx741.com/global2.php?channel=max1"
+  },
+  {
+    "time": "21:30",
+    "match": "NBA: Knicks vs Spurs - Finals Game #2",
+    "link": "https://streamx741.com/global2.php?channel=amazon1"
+  },
+  {
+    "time": "21:30",
+    "match": "NBA: Knicks vs Spurs - Finals Game #2",
+    "link": "https://streamx741.com/global2.php?channel=espndeportes"
   }
 ]

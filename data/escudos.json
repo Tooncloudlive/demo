@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "match": "Hungría vs Finlandia",
+    "homeLogo": "https://static.flashscore.com/res/image/data/0M4n93Yg-KMidKLjl.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/McOSaKyB-OYQpqern.png"
+  },
+  {
+    "match": "Azerbaiyán vs Malta",
+    "homeLogo": "https://static.flashscore.com/res/image/data/QXDfRbZg-dtrVaP64.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/ptmWE4Ea-zXtZbqMA.png"
+  },
+  {
+    "match": "Wanderers vs Danubio",
+    "homeLogo": "https://static.flashscore.com/res/image/data/WCc1ByCa-zFwegNb8.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/SE9ju9cM-vaUkIxVj.png"
+  },
+  {
+    "match": "Paraguay vs Nicaragua",
+    "homeLogo": "https://static.flashscore.com/res/image/data/xlHCGmwS-I5qbBI7s.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/4Mm2PnCr-EPEwybjP.png"
+  },
+  {
+    "match": "Canadá vs República de Irlanda",
+    "homeLogo": "https://static.flashscore.com/res/image/data/0U0WjVkl-EqLGVN18.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/EVkW48e5-fazrR153.png"
+  },
+  {
+    "match": "Haití vs Perú",
+    "homeLogo": "https://static.flashscore.com/res/image/data/OzGon6Da-GY05WHbt.png",
+    "awayLogo": "https://static.flashscore.com/res/image/data/nk3TfRGG-6aZroxFP.png"
+  }
+]
