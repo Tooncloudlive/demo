@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ToonCloud Deportes</title>
-<!-- Build: 2026-06-05 19:33 | Events: 13 | Logos: 6 -->
+<!-- Build: 2026-06-06 08:22 | Events: 0 | Logos: 0 -->
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1493,33 +1493,12 @@ header {
 // El formato es: { match: "Equipo Local vs Equipo Visitante", homeLogo: "URL_ESCUDO_LOCAL", awayLogo: "URL_ESCUDO_VISITANTE" }
 // Si no quieres escudo para un equipo, deja el campo vacio: ""
 
-const matchesLogos = [
-  { match: "Hungría vs Finlandia", homeLogo: "https://static.flashscore.com/res/image/data/0M4n93Yg-KMidKLjl.png", awayLogo: "https://static.flashscore.com/res/image/data/McOSaKyB-OYQpqern.png" },
-  { match: "Azerbaiyán vs Malta", homeLogo: "https://static.flashscore.com/res/image/data/QXDfRbZg-dtrVaP64.png", awayLogo: "https://static.flashscore.com/res/image/data/ptmWE4Ea-zXtZbqMA.png" },
-  { match: "Wanderers vs Danubio", homeLogo: "https://static.flashscore.com/res/image/data/WCc1ByCa-zFwegNb8.png", awayLogo: "https://static.flashscore.com/res/image/data/SE9ju9cM-vaUkIxVj.png" },
-  { match: "Paraguay vs Nicaragua", homeLogo: "https://static.flashscore.com/res/image/data/xlHCGmwS-I5qbBI7s.png", awayLogo: "https://static.flashscore.com/res/image/data/4Mm2PnCr-EPEwybjP.png" },
-  { match: "Canadá vs República de Irlanda", homeLogo: "https://static.flashscore.com/res/image/data/0U0WjVkl-EqLGVN18.png", awayLogo: "https://static.flashscore.com/res/image/data/EVkW48e5-fazrR153.png" },
-  { match: "Haití vs Perú", homeLogo: "https://static.flashscore.com/res/image/data/OzGon6Da-GY05WHbt.png", awayLogo: "https://static.flashscore.com/res/image/data/nk3TfRGG-6aZroxFP.png" }
-];
+const matchesLogos = [];
 
 // =====================================================
 // DATOS DE EVENTOS
 // =====================================================
-const eventsData = [
-  { time: "14:45", match: "Amistoso Internacional: Hungría vs Finlandia", link: "https://streamx741.com/global2.php?channel=disney8" },
-  { time: "15:00", match: "Amistoso Internacional: Azerbaiyán vs Malta", link: "https://streamx741.com/global2.php?channel=disney9" },
-  { time: "19:00", match: "Primera División: Wanderers vs Danubio", link: "https://streamx741.com/global2.php?channel=disney1" },
-  { time: "19:15", match: "Amistoso Internacional: Paraguay vs Nicaragua", link: "https://streamx741.com/global2.php?channel=eventos3" },
-  { time: "20:30", match: "Amistoso Internacional: Canadá vs República de Irlanda", link: "https://streamx741.com/global2.php?channel=tsn4" },
-  { time: "20:30", match: "Amistoso Internacional: Canadá vs República de Irlanda", link: "https://streamx741.com/global2.php?channel=fox2usa" },
-  { time: "21:00", match: "Amistoso Internacional: Haití vs Perú", link: "https://streamx741.com/global2.php?channel=eventos2" },
-  { time: "21:00", match: "Amistoso Internacional: Haití vs Perú", link: "https://streamx741.com/global2.php?channel=eventos1" },
-  { time: "21:00", match: "Amistoso Internacional: Haití vs Perú", link: "https://streamx741.com/global2.php?channel=foxdeportes" },
-  { time: "21:00", match: "Amistoso Internacional: Haití vs Perú", link: "https://streamx741.com/global2.php?channel=sportv1" },
-  { time: "21:00", match: "Copa de la Liga: Deportes Concepción vs Coquimbo Unido", link: "https://streamx741.com/global2.php?channel=max1" },
-  { time: "21:30", match: "NBA: Knicks vs Spurs - Finals Game #2", link: "https://streamx741.com/global2.php?channel=amazon1" },
-  { time: "21:30", match: "NBA: Knicks vs Spurs - Finals Game #2", link: "https://streamx741.com/global2.php?channel=espndeportes" }
-];
+const eventsData = [];
 
 // =====================================================
 // DATOS DE EVENTOS DESTACADOS (MANUAL)
