@@ -102,13 +102,6 @@
       transition: opacity 0.4s ease;
     }
 
-    .card:hover {
-      background: var(--card-hover);
-      border-color: var(--border-hover);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-    }
-
     .card:hover::before {
       opacity: 1;
     }
@@ -240,7 +233,7 @@
     }
 
     /* ============================================ */
-    /* SPLIT ROW (WORKS + SERVICES / TOOLS + CTA)   */
+    /* SPLIT ROW                                    */
     /* ============================================ */
     .split-row {
       display: grid;
@@ -253,85 +246,262 @@
     }
 
     /* ============================================ */
-    /* RECENT WORK                                  */
+    /* IG WHEEL - TRABAJOS RECIENTES               */
     /* ============================================ */
-    .work-card {
+    .ig-wheel-card {
       display: flex;
       flex-direction: column;
+      min-height: 420px;
+      position: relative;
+      overflow: visible;
     }
 
-    .work-header {
+    .ig-wheel-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
+      z-index: 10;
     }
 
-    .work-header .card-label {
+    .ig-wheel-header .card-label {
       margin-bottom: 0;
     }
 
-    .work-arrow {
-      width: 32px;
-      height: 32px;
+    .ig-wheel-counter {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* 3D Wheel Container */
+    .ig-wheel-scene {
+      flex: 1;
+      position: relative;
+      perspective: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      overflow: hidden;
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
+      border-radius: var(--radius-sm);
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.015) 0%, transparent 70%);
+    }
+
+    .ig-wheel-scene:active {
+      cursor: grabbing;
+    }
+
+    .ig-wheel-scene.dragging {
+      cursor: grabbing;
+    }
+
+    .ig-wheel {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      transform-style: preserve-3d;
+      transition: none;
+    }
+
+    .ig-wheel.spinning {
+      transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* Individual Post Item */
+    .ig-post {
+      position: absolute;
+      width: 110px;
+      height: 140px;
+      left: 50%;
+      top: 50%;
+      margin-left: -55px;
+      margin-top: -70px;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      cursor: pointer;
+      transition: filter 0.4s ease, opacity 0.4s ease;
+    }
+
+    .ig-post-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-xs);
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      position: relative;
+      transition: var(--transition);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .ig-post:hover .ig-post-inner {
+      border-color: var(--border-hover);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+
+    .ig-post img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      transition: transform 0.4s ease;
+    }
+
+    .ig-post:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Overlay icon on hover */
+    .ig-post-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: var(--radius-xs);
+    }
+
+    .ig-post:hover .ig-post-overlay {
+      opacity: 1;
+    }
+
+    .ig-post-overlay i {
+      width: 24px;
+      height: 24px;
+      color: #fff;
+    }
+
+    /* Center hub decoration */
+    .ig-wheel-hub {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: rgba(255,255,255,0.04);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 100;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      pointer-events: none;
+    }
+
+    .ig-wheel-hub::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+
+    /* Wheel instructions */
+    .ig-wheel-instructions {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      opacity: 0.6;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* Navigation arrows */
+    .ig-wheel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
       color: var(--text-secondary);
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .work-arrow:hover {
-      background: rgba(255,255,255,0.08);
-      color: var(--text-primary);
-      transform: scale(1.1);
-    }
-
-    .work-arrow i {
-      width: 14px;
-      height: 14px;
-    }
-
-    .work-image-wrap {
-      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: var(--radius-xs);
-      overflow: hidden;
-      margin-bottom: 16px;
-      background: rgba(0,0,0,0.15);
-      min-height: 160px;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    .ig-wheel-nav:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--text-primary);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .ig-wheel-nav i {
+      width: 16px;
+      height: 16px;
+    }
+
+    .ig-wheel-nav.prev { left: 12px; }
+    .ig-wheel-nav.next { right: 12px; }
+
+    /* Dot indicators */
+    .ig-wheel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+      z-index: 10;
+    }
+
+    .ig-wheel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      cursor: pointer;
       transition: var(--transition);
     }
 
-    .work-image-wrap:hover {
-      transform: scale(1.01);
+    .ig-wheel-dot.active {
+      background: rgba(255,255,255,0.5);
+      transform: scale(1.3);
     }
 
-    .work-image-wrap img {
-      max-width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-      border-radius: var(--radius-xs);
-      transition: var(--transition);
+    .ig-wheel-dot:hover {
+      background: rgba(255,255,255,0.3);
     }
 
-    .work-title {
-      font-size: 1.05rem;
+    /* Selected post info */
+    .ig-post-info {
+      margin-top: 14px;
+      text-align: center;
+      min-height: 44px;
+      z-index: 10;
+    }
+
+    .ig-post-info-title {
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
+      transition: opacity 0.3s ease;
     }
 
-    .work-desc {
-      font-size: 0.75rem;
+    .ig-post-info-desc {
+      font-size: 0.72rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      transition: opacity 0.3s ease;
     }
 
     /* ============================================ */
@@ -525,12 +695,7 @@
       }
     }
 
-    @keyframes gentlePulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    /* Staggered entrance for rows */
+    /* Staggered entrance */
     .bento-grid > *:nth-child(1) { animation-delay: 0.05s; }
     .bento-grid > *:nth-child(2) { animation-delay: 0.12s; }
     .bento-grid > *:nth-child(3) { animation-delay: 0.2s; }
@@ -549,7 +714,6 @@
         grid-template-columns: repeat(6, 1fr);
       }
 
-      /* Hero spans full width */
       .hero-wrapper {
         grid-column: span 6;
         display: grid;
@@ -577,7 +741,6 @@
         border: none;
       }
 
-      /* Social row spans full width */
       .social-wrapper {
         grid-column: span 6;
       }
@@ -586,10 +749,26 @@
         grid-template-columns: repeat(5, 1fr);
       }
 
-      /* Split rows: 2 columns */
       .split-row {
         grid-column: span 6;
         grid-template-columns: 1.2fr 1fr;
+      }
+
+      /* IG Wheel responsive */
+      .ig-wheel-scene {
+        min-height: 360px;
+      }
+
+      .ig-wheel {
+        width: 300px;
+        height: 300px;
+      }
+
+      .ig-post {
+        width: 130px;
+        height: 165px;
+        margin-left: -65px;
+        margin-top: -82px;
       }
     }
 
@@ -612,6 +791,15 @@
 
       .chips-container {
         height: 240px;
+      }
+
+      .ig-wheel-scene {
+        min-height: 380px;
+      }
+
+      .ig-wheel {
+        width: 320px;
+        height: 320px;
       }
     }
 
@@ -662,8 +850,34 @@
         align-items: center;
         text-align: center;
       }
+
+      /* IG Wheel mobile */
+      .ig-wheel-scene {
+        min-height: 280px;
+      }
+
+      .ig-wheel {
+        width: 220px;
+        height: 220px;
+      }
+
+      .ig-post {
+        width: 90px;
+        height: 115px;
+        margin-left: -45px;
+        margin-top: -57px;
+      }
+
+      .ig-wheel-nav {
+        width: 32px;
+        height: 32px;
+      }
+
+      .ig-wheel-nav.prev { left: 8px; }
+      .ig-wheel-nav.next { right: 8px; }
     }
   </style>
+<base target="_blank">
 </head>
 
 <body>
@@ -678,22 +892,16 @@
     <!-- ========================================== -->
     <div class="hero-wrapper">
 
-      <!-- CARD HERO -->
       <div class="card hero-card" id="heroCard">
         <div class="hero-content">
-          <!-- TITULO: Nombre -->
           <h1 class="hero-name" id="heroName">Soy Nahuel Martinez</h1>
-          <!-- SUBTITULO: Rol + Empresa -->
           <p class="hero-role" id="heroRole">Diseñador grafico, y Community manager</p>
-          <!-- TEXTO: Descripcion -->
-          <p class="hero-desc" id="heroDesc">Dedicado al diseño minimalista, ordenado y estetico, inspirado en la estetica de apple .</p>
+          <p class="hero-desc" id="heroDesc">Dedicado al diseño minimalista, ordenado y estetico, inspirado en la estetica de apple.</p>
         </div>
       </div>
 
-      <!-- CARD PROFILE IMAGE -->
       <div class="card profile-card" id="profileCard">
         <div class="hero-image-wrap">
-          <!-- IMAGEN: Foto de perfil -->
           <img id="profileImage" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Varnika&backgroundColor=1a1a1a" alt="Profile Photo">
         </div>
       </div>
@@ -705,38 +913,60 @@
     <!-- ========================================== -->
     <div class="social-wrapper">
       <div class="social-row" id="socialRow">
-        <!-- Los botones se generan via JS -->
+        <!-- Botones via JS -->
       </div>
     </div>
 
     <!-- ========================================== -->
-    <!-- ROW 3: RECENT WORKS + SERVICES             -->
+    <!-- ROW 3: IG WHEEL + SERVICES                 -->
     <!-- ========================================== -->
     <div class="split-row">
 
-      <!-- CARD RECENT WORKS -->
-      <div class="card work-card" id="workCard">
-        <div class="work-header">
-          <span class="card-label" id="workLabel">Trabajos recientes</span>
-          <a class="work-arrow" id="workLink" href="#" aria-label="View work">
-            <i data-lucide="arrow-up-right"></i>
-          </a>
+      <!-- ======= IG WHEEL - TRABAJOS RECIENTES ======= -->
+      <div class="card ig-wheel-card" id="igWheelCard">
+        <div class="ig-wheel-header">
+          <span class="card-label" id="igWheelLabel">Trabajos recientes</span>
+          <span class="ig-wheel-counter" id="igWheelCounter">1 / 6</span>
         </div>
-        <div class="work-image-wrap">
-          <!-- IMAGEN: Proyecto reciente -->
-          <img id="workImage" src="https://placehold.co/600x400/1a1a1a/444?text=Project+Mockup" alt="Recent Work">
+
+        <div class="ig-wheel-scene" id="igWheelScene">
+          <!-- Nav arrows -->
+          <button class="ig-wheel-nav prev" id="igWheelPrev" aria-label="Anterior">
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button class="ig-wheel-nav next" id="igWheelNext" aria-label="Siguiente">
+            <i data-lucide="chevron-right"></i>
+          </button>
+
+          <!-- 3D Wheel -->
+          <div class="ig-wheel" id="igWheel">
+            <!-- Posteos via JS -->
+          </div>
+
+          <!-- Center hub -->
+          <div class="ig-wheel-hub"></div>
+
+          <!-- Instructions -->
+          <span class="ig-wheel-instructions">Arrastra para girar &middot; Click para ver</span>
         </div>
-        <!-- TITULO: Proyecto -->
-        <p class="work-title" id="workTitle">Smarthome Dashboard</p>
-        <!-- TEXTO: Descripcion proyecto -->
-        <p class="work-desc" id="workDesc">A comprehensive smart home interface with real-time controls and automation.</p>
+
+        <!-- Dot indicators -->
+        <div class="ig-wheel-dots" id="igWheelDots">
+          <!-- Dots via JS -->
+        </div>
+
+        <!-- Post info -->
+        <div class="ig-post-info" id="igPostInfo">
+          <div class="ig-post-info-title" id="igPostInfoTitle">Publicacion #1</div>
+          <div class="ig-post-info-desc" id="igPostInfoDesc">Descripcion del post</div>
+        </div>
       </div>
 
-      <!-- CARD SERVICES -->
+      <!-- ======= SERVICES ======= -->
       <div class="card services-card" id="servicesCard">
         <span class="card-label" id="servicesLabel">Services</span>
         <div class="chips-container" id="chipsContainer">
-          <!-- Las chips se generan via JS -->
+          <!-- Chips via JS -->
         </div>
       </div>
 
@@ -747,21 +977,16 @@
     <!-- ========================================== -->
     <div class="split-row">
 
-      <!-- CARD TOOLS -->
       <div class="card" id="toolsCard">
         <span class="card-label" id="toolsLabel">Herramientas de creación</span>
         <div class="tools-grid" id="toolsGrid">
-          <!-- Las herramientas se generan via JS -->
+          <!-- Tools via JS -->
         </div>
       </div>
 
-      <!-- CARD CTA -->
       <div class="card cta-card" id="ctaCard">
-        <!-- TITULO: CTA -->
         <h2 class="cta-title" id="ctaTitle">Contactame!</h2>
-        <!-- TEXTO: Descripcion CTA -->
         <p class="cta-desc" id="ctaDesc">Creemos ideas, diseñemos contenido e impulsemos la presencia digital de tus redes sociales.</p>
-        <!-- LINK: Boton CTA -->
         <a class="cta-btn" id="ctaBtn" href="mailto:hello@example.com">
           <span id="ctaBtnText">Enviame un mensaje!</span>
           <i data-lucide="arrow-right"></i>
@@ -794,19 +1019,63 @@
         { name: "X",        icon: "twitter",  url: "https://x.com/username" },
         { name: "LinkedIn", icon: "linkedin", url: "https://linkedin.com/in/username" },
         { name: "GitHub",   icon: "github",   url: "https://github.com/username" },
-        { name: "Instagram",icon: "https://static.vecteezy.com/system/resources/thumbnails/065/386/519/small/instagram-letter-white-logo-icon-ig-app-transparent-background-premium-social-media-design-for-digital-download-free-png.png",url: "https://instagram.com/username" },
+        { name: "Instagram",icon: "instagram",url: "https://instagram.com/username" },
         { name: "Email",    icon: "mail",     url: "mailto:hello@example.com" },
       ],
 
-      // ---- RECENT WORK ----
-      recentWork: {
-        label: "Trabajos recientes",
-        image: "https://imgur.com/a/ZaRF07t",
-        image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRuDmlWd4qlPvoGbGJKz4WD4v-OrlTzQAyISqHPij_ihF8hTqpl",
-        title: "Publicaciones",
-        description: "Flyers discoteca, y infografia taller mecanico.",
-        link: "https://www.instagram.com/p/DaMXt8bDrOz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      },
+      // ---- IG WHEEL - POSTEOS DE INSTAGRAM ----
+      // AQUI AGREGAS/EDITAS LOS POSTEOS DE IG
+      // Cada posteo necesita: image (URL de la imagen), title, description, url (link al post de IG)
+      igPosts: [
+        {
+          image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=500&fit=crop",
+          title: "Flyer Discoteca",
+          description: "Diseño de flyer para evento de electronica",
+          url: "https://www.instagram.com/p/DaMXt8bDrOz/"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=500&fit=crop",
+          title: "Infografia Taller",
+          description: "Diseño de infografia para taller mecanico",
+          url: "https://www.instagram.com/p/DaMXt8bDrOz/"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=500&fit=crop",
+          title: "Branding Minimal",
+          description: "Identidad visual para marca de ropa",
+          url: "https://www.instagram.com/p/DaMXt8bDrOz/"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=500&fit=crop",
+          title: "Social Media Kit",
+          description: "Kit de templates para redes sociales",
+          url: "https://www.instagram.com/p/DaMXt8bDrOz/"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=500&fit=crop",
+          title: "Motion Graphics",
+          description: "Animacion para stories de Instagram",
+          url: "https://www.instagram.com/p/DaMXt8bDrOz/"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1542744094-3f31a7b9be82?w=400&h=500&fit=crop",
+          title: "Reel Cover",
+          description: "Portada de reel para cuenta de fitness",
+          url: "https://www.instagram.com/p/DaMXt8bDrOz/"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=500&fit=crop",
+          title: "Logo Design",
+          description: "Diseño de logo minimalista",
+          url: "https://www.instagram.com/p/DaMXt8bDrOz/"
+        },
+        {
+          image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=500&fit=crop",
+          title: "Feed Aesthetic",
+          description: "Diseno de feed estetico para marca",
+          url: "https://www.instagram.com/p/DaMXt8bDrOz/"
+        },
+      ],
 
       // ---- SERVICES (chips) ----
       services: {
@@ -879,22 +1148,6 @@
         `).join('');
       }
 
-      // ---- RENDER RECENT WORK ----
-      const workLabelEl = document.getElementById('workLabel');
-      const workLinkEl = document.getElementById('workLink');
-      const workImageEl = document.getElementById('workImage');
-      const workTitleEl = document.getElementById('workTitle');
-      const workDescEl = document.getElementById('workDesc');
-
-      if (workLabelEl) workLabelEl.textContent = CONFIG.recentWork.label;
-      if (workLinkEl) workLinkEl.href = CONFIG.recentWork.link;
-      if (workImageEl) {
-        workImageEl.src = CONFIG.recentWork.image;
-        workImageEl.alt = CONFIG.recentWork.title;
-      }
-      if (workTitleEl) workTitleEl.textContent = CONFIG.recentWork.title;
-      if (workDescEl) workDescEl.textContent = CONFIG.recentWork.description;
-
       // ---- RENDER SERVICES CHIPS ----
       const servicesLabelEl = document.getElementById('servicesLabel');
       const chipsContainer = document.getElementById('chipsContainer');
@@ -934,7 +1187,271 @@
       if (typeof lucide !== 'undefined') {
         lucide.createIcons();
       }
+
+      // ============================================
+      // IG WHEEL LOGIC
+      // ============================================
+      initIGWheel();
     });
+
+    function initIGWheel() {
+      const posts = CONFIG.igPosts;
+      const wheelEl = document.getElementById('igWheel');
+      const sceneEl = document.getElementById('igWheelScene');
+      const dotsEl = document.getElementById('igWheelDots');
+      const counterEl = document.getElementById('igWheelCounter');
+      const titleEl = document.getElementById('igPostInfoTitle');
+      const descEl = document.getElementById('igPostInfoDesc');
+      const prevBtn = document.getElementById('igWheelPrev');
+      const nextBtn = document.getElementById('igWheelNext');
+
+      if (!wheelEl || !sceneEl || posts.length === 0) return;
+
+      const count = posts.length;
+      const radius = 180; // Radio del circulo en px
+      const angleStep = 360 / count;
+
+      let currentRotation = 0;
+      let isDragging = false;
+      let startX = 0;
+      let startRotation = 0;
+      let velocity = 0;
+      let lastX = 0;
+      let lastTime = 0;
+      let momentumId = null;
+      let activeIndex = 0;
+
+      // Render posts
+      wheelEl.innerHTML = posts.map((post, i) => {
+        const angle = i * angleStep;
+        return `
+          <div class="ig-post" data-index="${i}" data-angle="${angle}"
+               style="transform: rotateY(${angle}deg) translateZ(${radius}px);"
+               onclick="window.open('${post.url}', '_blank', 'noopener,noreferrer')">
+            <div class="ig-post-inner">
+              <img src="${post.image}" alt="${post.title}" loading="lazy">
+              <div class="ig-post-overlay">
+                <i data-lucide="external-link"></i>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Render dots
+      if (dotsEl) {
+        dotsEl.innerHTML = posts.map((_, i) =>
+          `<div class="ig-wheel-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>`
+        ).join('');
+      }
+
+      // Re-init lucide for new icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      function updateWheel(rotation, animate = false) {
+        currentRotation = rotation;
+        wheelEl.style.transform = `rotateY(${rotation}deg)`;
+
+        // Calculate which post is most "front-facing"
+        const normalizedRot = ((rotation % 360) + 360) % 360;
+        let closestIdx = 0;
+        let closestDiff = Infinity;
+
+        for (let i = 0; i < count; i++) {
+          let itemAngle = (i * angleStep);
+          let diff = Math.abs(itemAngle - normalizedRot);
+          if (diff > 180) diff = 360 - diff;
+          if (diff < closestDiff) {
+            closestDiff = diff;
+            closestIdx = i;
+          }
+        }
+
+        // The item at the front is the one whose angle is closest to rotation
+        // Actually we want the one OPPOSITE to rotation (it's rotated away)
+        activeIndex = ((Math.round(-rotation / angleStep) % count) + count) % count;
+
+        // Update dots
+        document.querySelectorAll('.ig-wheel-dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === activeIndex);
+        });
+
+        // Update info
+        if (titleEl) {
+          titleEl.style.opacity = '0';
+          descEl.style.opacity = '0';
+          setTimeout(() => {
+            titleEl.textContent = posts[activeIndex].title;
+            descEl.textContent = posts[activeIndex].description;
+            titleEl.style.opacity = '1';
+            descEl.style.opacity = '1';
+          }, 150);
+        }
+
+        // Update counter
+        if (counterEl) {
+          counterEl.textContent = `${activeIndex + 1} / ${count}`;
+        }
+
+        // Update post visibility (blur/dim posts on the "back")
+        document.querySelectorAll('.ig-post').forEach((post, i) => {
+          // Calculate how "front" this post is
+          const postAngle = i * angleStep;
+          const rotNormalized = ((currentRotation % 360) + 360) % 360;
+          let diff = Math.abs(postAngle - rotNormalized);
+          if (diff > 180) diff = 360 - diff;
+          const frontness = 1 - (diff / 180);
+          post.style.opacity = 0.3 + (frontness * 0.7);
+          post.style.filter = `brightness(${0.5 + frontness * 0.5})`;
+          post.style.zIndex = Math.round(frontness * 100);
+        });
+      }
+
+      // Mouse / Touch Drag
+      function onPointerDown(e) {
+        isDragging = true;
+        startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        startRotation = currentRotation;
+        lastX = startX;
+        lastTime = Date.now();
+        velocity = 0;
+        sceneEl.classList.add('dragging');
+        wheelEl.classList.remove('spinning');
+
+        if (momentumId) {
+          cancelAnimationFrame(momentumId);
+          momentumId = null;
+        }
+
+        e.preventDefault();
+      }
+
+      function onPointerMove(e) {
+        if (!isDragging) return;
+        const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const deltaX = x - startX;
+        const newRotation = startRotation + (deltaX * 0.5);
+
+        // Calculate velocity for momentum
+        const now = Date.now();
+        const dt = now - lastTime;
+        if (dt > 0) {
+          velocity = (x - lastX) / dt * 15;
+        }
+        lastX = x;
+        lastTime = now;
+
+        updateWheel(newRotation);
+        e.preventDefault();
+      }
+
+      function onPointerUp(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        sceneEl.classList.remove('dragging');
+
+        // Apply momentum
+        const decay = 0.95;
+        function momentumLoop() {
+          if (Math.abs(velocity) < 0.1) {
+            // Snap to nearest post
+            snapToNearest();
+            return;
+          }
+          updateWheel(currentRotation + velocity);
+          velocity *= decay;
+          momentumId = requestAnimationFrame(momentumLoop);
+        }
+        momentumId = requestAnimationFrame(momentumLoop);
+      }
+
+      function snapToNearest() {
+        wheelEl.classList.add('spinning');
+        const targetRotation = -activeIndex * angleStep;
+        // Find shortest path
+        let diff = targetRotation - currentRotation;
+        while (diff > 180) diff -= 360;
+        while (diff < -180) diff += 360;
+        updateWheel(currentRotation + diff, true);
+      }
+
+      // Event listeners
+      sceneEl.addEventListener('mousedown', onPointerDown);
+      window.addEventListener('mousemove', onPointerMove);
+      window.addEventListener('mouseup', onPointerUp);
+
+      sceneEl.addEventListener('touchstart', onPointerDown, { passive: false });
+      window.addEventListener('touchmove', onPointerMove, { passive: false });
+      window.addEventListener('touchend', onPointerUp);
+
+      // Navigation buttons
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          wheelEl.classList.add('spinning');
+          activeIndex = (activeIndex - 1 + count) % count;
+          updateWheel(-activeIndex * angleStep, true);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          wheelEl.classList.add('spinning');
+          activeIndex = (activeIndex + 1) % count;
+          updateWheel(-activeIndex * angleStep, true);
+        });
+      }
+
+      // Dot navigation
+      if (dotsEl) {
+        dotsEl.addEventListener('click', (e) => {
+          const dot = e.target.closest('.ig-wheel-dot');
+          if (dot) {
+            wheelEl.classList.add('spinning');
+            activeIndex = parseInt(dot.dataset.index);
+            updateWheel(-activeIndex * angleStep, true);
+          }
+        });
+      }
+
+      // Prevent click when dragging
+      let dragThreshold = 5;
+      let dragDistance = 0;
+
+      sceneEl.addEventListener('mousedown', (e) => {
+        dragDistance = 0;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          dragDistance += Math.abs(e.movementX);
+        }
+      });
+
+      // Initial update
+      updateWheel(0);
+
+      // Auto-rotate slowly when idle (optional, subtle)
+      let idleTimer = null;
+      function resetIdleTimer() {
+        if (idleTimer) clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          if (!isDragging && Math.abs(velocity) < 0.1) {
+            wheelEl.classList.add('spinning');
+            activeIndex = (activeIndex + 1) % count;
+            updateWheel(-activeIndex * angleStep, true);
+          }
+          resetIdleTimer();
+        }, 5000);
+      }
+      resetIdleTimer();
+
+      sceneEl.addEventListener('mousedown', resetIdleTimer);
+      sceneEl.addEventListener('touchstart', resetIdleTimer);
+    }
   </script>
 
 </body>
