@@ -1,0 +1,211 @@
+/**
+ * ============================================================================
+ * style.css — Estilos de la Interfaz 2D
+ * ============================================================================
+ *
+ * Este archivo contiene los estilos CSS para las pantallas 2D de la aplicación:
+ * - Pantalla de inicio (antes de entrar a XR)
+ * - Pantalla de error (cuando WebXR no está disponible)
+ *
+ * NOTA: El panel 3D del reloj y su diseño glassmorphism se renderizan
+ * completamente con Three.js (shaders, materiales, geometrías).
+ * Este CSS solo aplica a los overlays HTML.
+ * ============================================================================
+ */
+
+/* ────────────────────────────────────────────────────────────────────────────
+   RESET Y BASE
+   ──────────────────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif;
+  background: #000000;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#app canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   OVERLAY SCREENS (pantallas superpuestas al canvas)
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.overlay-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   PANTALLA DE INICIO
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.start-content {
+  text-align: center;
+  padding: 48px 32px;
+  max-width: 400px;
+}
+
+.app-title {
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.app-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.60);
+  margin-bottom: 40px;
+  letter-spacing: 0.01em;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  color: #000000;
+  background: #ffffff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.start-button:hover {
+  transform: scale(1.03);
+}
+
+.start-button:active {
+  transform: scale(0.97);
+}
+
+.start-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.app-hint {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.02em;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   PANTALLA DE ERROR
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.error-content {
+  text-align: center;
+  padding: 48px 32px;
+  max-width: 480px;
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.error-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.error-detail {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.70);
+  margin-bottom: 20px;
+}
+
+.error-note {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   ANIMACIONES
+   ──────────────────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay-screen {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ──────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 28px;
+  }
+
+  .start-content,
+  .error-content {
+    padding: 32px 24px;
+  }
+}

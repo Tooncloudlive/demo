@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quest Widgets — Sistema de widgets flotantes para Meta Quest 3 con Mixed Reality" />
+    <title>Quest Widgets — Clock</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!--
+      ============================================================================
+      Quest Widgets — Clock Widget
+      ============================================================================
+      Aplicación WebXR para Meta Quest 3 con Mixed Reality (passthrough).
+      Muestra un reloj flotante con diseño glassmorphism estilo Apple Vision Pro.
+
+      Tecnologías:
+      - Three.js (renderizado 3D)
+      - WebXR Device API (sesión immersive-ar)
+      - HTML/CSS/JavaScript ES6+
+
+      NO usa Unity, Unreal, A-Frame, ni Babylon.js.
+      ============================================================================
+    -->
+
+    <!-- Canvas de Three.js (insertado por JavaScript) -->
+    <div id="app"></div>
+
+    <!-- ============================================================================
+         PANTALLA DE INICIO
+         Se muestra antes de entrar en la sesión WebXR.
+         El usuario debe presionar el botón para iniciar Mixed Reality.
+         ============================================================================ -->
+    <div id="start-screen" class="overlay-screen">
+      <div class="start-content">
+        <h1 class="app-title">Quest Widgets</h1>
+        <p class="app-subtitle">Reloj flotante en Realidad Mixta</p>
+        <button id="start-button" class="start-button" type="button">
+          Entrar en Realidad Mixta
+        </button>
+        <p class="app-hint">Requiere Meta Quest 3 + Meta Quest Browser</p>
+      </div>
+    </div>
+
+    <!-- ============================================================================
+         PANTALLA DE ERROR
+         Se muestra cuando WebXR o immersive-ar no están disponibles.
+         ============================================================================ -->
+    <div id="error-screen" class="overlay-screen" style="display: none;">
+      <div class="error-content">
+        <div class="error-icon">&#9888;</div>
+        <h2 id="error-title" class="error-title">Error</h2>
+        <p id="error-detail" class="error-detail"></p>
+        <p id="error-note" class="error-note" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Script principal -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
