@@ -1,0 +1,345 @@
+/*
+ * ============================================================================
+ * Quest Widgets - Reloj Flotante
+ * ============================================================================
+ * Hoja de estilos principal.
+ * Estetica: Apple Vision Pro / visionOS / Glassmorphism / Minimalismo
+ * 
+ * Colores principales:
+ * - Fondo: transparente (escena 3D se ve al fondo)
+ * - Panel: blanco translucido con baja opacidad
+ * - Texto: blanco puro para maximo contraste
+ * - Acentos: blancos muy sutiles, sin colores llamativos
+ * ============================================================================
+ */
+
+/*
+ * ----------------------------------------------------------------------------
+ * RESET Y CONFIGURACION BASE
+ * ----------------------------------------------------------------------------
+ * Elimina margenes y padding por defecto.
+ * Asegura que el body y html ocupen toda la pantalla.
+ * Fondo negro para transicion suave hacia la escena 3D.
+ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #000000;
+    color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * ESCENA A-FRAME
+ * ----------------------------------------------------------------------------
+ * La escena ocupa toda la pantalla.
+ * Canvas de A-Frame se muestra por encima de todo.
+ */
+a-scene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Canvas interno de A-Frame */
+a-scene canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * DOM OVERLAY
+ * ----------------------------------------------------------------------------
+ * Capa HTML superpuesta sobre la escena 3D.
+ * Solo visible cuando WebXR DOM Overlay esta activo.
+ * Contiene botones y mensajes informativos.
+ */
+.dom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none; /* Permite clics a traves hacia la escena 3D */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+/* Habilita interaccion para elementos clickeables del overlay */
+.dom-overlay .vr-button,
+.dom-overlay .loading-message,
+.dom-overlay .instructions {
+    pointer-events: auto;
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * BOTON VR
+ * ----------------------------------------------------------------------------
+ * Boton para entrar en modo VR/WebXR.
+ * Estilo glassmorphism: fondo translucido, borde sutil.
+ * Aparece centrado en pantalla antes de entrar a VR.
+ */
+.vr-button {
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    animation: fadeInButton 0.8s ease-out 1.5s forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto hover: ligero brillo y escala */
+.vr-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.08);
+}
+
+/* Efecto active: presionado */
+.vr-button:active {
+    transform: scale(0.97);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * MENSAJE DE CARGA
+ * ----------------------------------------------------------------------------
+ * Pantalla inicial mientras la escena se prepara.
+ * Muestra el nombre del proyecto y estado de carga.
+ */
+.loading-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out 0.3s forwards;
+    transition: opacity 0.5s ease-out;
+}
+
+.loading-message p {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.loading-message .loading-sub {
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * INSTRUCCIONES
+ * ----------------------------------------------------------------------------
+ * Texto informativo que aparece despues de cargar.
+ * Indica como interactuar con el widget.
+ */
+.instructions {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 2.5s forwards;
+    transition: opacity 0.5s ease-out;
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * UTILIDADES
+ * ----------------------------------------------------------------------------
+ * Clases helper para mostrar/ocultar elementos.
+ */
+.hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * ANIMACIONES KEYFRAMES
+ * ----------------------------------------------------------------------------
+ * Animaciones reutilizables para transiciones suaves.
+ * Todas usan easing suave para sensacion premium.
+ */
+
+/* Fade in general: aparicion gradual */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Fade in del boton VR */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Fade out: desaparicion gradual */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Pulse sutil: para indicar interactividad */
+@keyframes subtlePulse {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * MEDIA QUERIES
+ * ----------------------------------------------------------------------------
+ * Ajustes para diferentes tamanos de pantalla.
+ * Principalmente para debugging en desktop.
+ */
+@media (max-width: 768px) {
+    .vr-button {
+        padding: 14px 32px;
+        font-size: 16px;
+        border-radius: 16px;
+    }
+    
+    .loading-message p {
+        font-size: 22px;
+    }
+    
+    .loading-message .loading-sub {
+        font-size: 13px;
+    }
+    
+    .instructions {
+        font-size: 12px;
+        bottom: 40px;
+    }
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * ESTILOS PARA MODO XR/VR ACTIVO
+ * ----------------------------------------------------------------------------
+ * Cuando el modo WebXR esta activo, se ocultan elementos del overlay
+ * que no son necesarios dentro del headset.
+ */
+a-scene.xr-mode .dom-overlay .loading-message,
+a-scene.xr-mode .dom-overlay .vr-button {
+    display: none;
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * ESTILOS PARA PANEL DE RELOJ (HTML Overlay opcional)
+ * ----------------------------------------------------------------------------
+ * Si en futuras versiones se usa un div HTML como textura,
+ * estos estilos definen el aspecto glassmorphism.
+ */
+.clock-widget-html {
+    width: 280px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 28px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.clock-widget-html .time-display {
+    font-size: 52px;
+    font-weight: 200;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.clock-widget-html .date-display {
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.85;
+    letter-spacing: 0.3px;
+}
